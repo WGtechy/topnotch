@@ -28,21 +28,20 @@
     padding: 0.5rem;
     background: #fff;
     border: 1px solid #e3e3e3;
-    &Heading{
-      display: flex
-      ;
-          align-items: center;
-          justify-content: space-between;
-          
-              &Title {
-                font-weight: 500;
-                font-size: 1.2rem;
-                padding: .5rem 0;
-                user-select: none;
-              }
-              &Switch{
 
-              }
+    &Heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &Title {
+        font-weight: 500;
+        font-size: 1.2rem;
+        padding: .5rem 0;
+        user-select: none;
+      }
+
+      &Switch {}
 
     }
 
@@ -75,10 +74,11 @@
           gap: .5rem;
           flex-wrap: wrap;
           margin: .3rem;
+
           &Add {
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            background: #4d0552;
+            background: #121417;
             color: #e3e3e3;
             cursor: pointer;
             height: 2.5rem;
@@ -92,19 +92,20 @@
           }
 
           &Item {
-               padding: 0.5rem 1rem;
-    background: #4d0552;
-    color: #e3e3e3;
-    display: flex
-;
-    border-radius: 20px;
-    align-items: center;
-    gap: 1rem;
-            &Content{
-              &Name{
+            padding: 0.5rem 1rem;
+            background: #121417;
+            color: #e3e3e3;
+            display: flex;
+            border-radius: 20px;
+            align-items: center;
+            gap: 1rem;
+
+            &Content {
+              &Name {
                 font-size: 1.2rem;
               }
-              &Description{
+
+              &Description {
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
                 font-size: .8rem;
@@ -118,14 +119,13 @@
             }
 
             &Trash {
-                cursor: pointer;
-    margin: auto;
-    height: 1.5rem;
-    width: 1.5rem;
-    display: flex
-;
-    align-items: center;
-    justify-content: center;
+              cursor: pointer;
+              margin: auto;
+              height: 1.5rem;
+              width: 1.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
 
             &Trash:hover {
@@ -138,7 +138,7 @@
           display: flex;
           max-width: 80vw;
           width: 18rem;
-          border: 1px solid #4d0552;
+          border: 1px solid #121417;
           padding: .5rem;
           border-radius: 20px;
 
@@ -195,7 +195,7 @@
         align-items: center;
         justify-content: center;
         padding: .5rem 1rem;
-        background: #4d0552;
+        background: #121417;
         width: min-content;
         margin: auto;
         border-radius: 10px;
@@ -211,7 +211,7 @@
   /* bottom: 0px; */
   /* right: 10px; */
   padding: 0.5rem 1rem;
-  background: #4d0552;
+  background: #121417;
   color: #e3e3e3;
   border-radius: 20px;
   cursor: pointer;

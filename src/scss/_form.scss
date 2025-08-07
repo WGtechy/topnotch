@@ -68,7 +68,7 @@
   flex-direction: column;
 
   label {
-    color: #4d0552;
+    color: #121417;
   }
 
   &Input {
@@ -101,19 +101,19 @@
 }
 
 .formCheckbox {
-  display: flex
-  ;
-      justify-content: space-between;
-      background: #eee;
-      margin: 0.2rem 0;
-      padding: 12px 15px;
-      border-radius: 10px;
-      align-items: center;
-      height: 2.5rem;
-      gap: 4rem;
-      width: 100%;
-      cursor: pointer;
-  label{
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  margin: 0.2rem 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  align-items: center;
+  height: 2.5rem;
+  gap: 4rem;
+  width: 100%;
+  cursor: pointer;
+
+  label {
     font-size: .8rem;
   }
 
@@ -172,7 +172,7 @@
   }
 }
 
-.dateInput{
+.dateInput {
   outline: none;
   border: 0;
   width: 100%;
@@ -180,7 +180,7 @@
   padding: 1rem;
 }
 
-  // ::-webkit-datetime-edit{padding: 1rem}
+// ::-webkit-datetime-edit{padding: 1rem}
 // ::-webkit-datetime-edit-fields-wrapper{background: yellow}
 // ::-webkit-datetime-edit-text{color: red; padding: .5rem}
 
@@ -195,4 +195,4 @@
 // // ::-webkit-datetime-edit-ampm-field
 
 // // ::-webkit-inner-spin-button
-// ::-webkit-calendar-picker-indicator{color:#4d0552}
+// ::-webkit-calendar-picker-indicator{color:#121417}

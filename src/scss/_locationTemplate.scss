@@ -6,7 +6,7 @@
         gap: 1rem;
 
         &Item {
-            border: 1px solid #4d0552;
+            border: 1px solid #121417;
             border-radius: 10px;
             padding: 10px;
 
@@ -37,7 +37,7 @@
                     gap: 1rem;
 
                     &Item {
-                        border: 1px solid #4d0552;
+                        border: 1px solid #121417;
                         border-radius: 10px;
                         padding: 10px;
                         display: flex;
@@ -70,7 +70,7 @@
                             flex-direction: column;
 
                             &Item {
-                                border: 1px solid #4d0552;
+                                border: 1px solid #121417;
                                 border-radius: 20px;
                                 padding: .3rem .8rem;
                                 display: flex;
@@ -92,11 +92,11 @@
                             &New {
                                 padding: 0.5rem 1rem;
                                 border-radius: 20px;
-                                background: #4d0552;
+                                background: #121417;
                                 color: #e3e3e3;
                                 cursor: pointer;
                                 width: max-content;
-                                
+
                             }
                         }
                     }
@@ -104,7 +104,7 @@
                     &New {
                         padding: 0.5rem 1rem;
                         border-radius: 20px;
-                        background: #4d0552;
+                        background: #121417;
                         color: #e3e3e3;
                         cursor: pointer;
                         width: max-content;
@@ -118,7 +118,7 @@
         &New {
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            background: #4d0552;
+            background: #121417;
             color: #e3e3e3;
             cursor: pointer;
             width: max-content;
@@ -133,7 +133,7 @@
             &Submit {
                 padding: 0.5rem 1rem;
                 border-radius: 20px;
-                background: #4d0552;
+                background: #121417;
                 color: #e3e3e3;
                 cursor: pointer;
                 width: max-content;

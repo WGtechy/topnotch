@@ -66,39 +66,7 @@ handleTourPayment,
         return null;
       }
     }, [product, history]);
-
-    // useEffect(() => {
-    //   if (media) {
-    //     setTrack(mediaFiles[Number(media)]);
-    //   } else {
-    //     setTrack(null);
-    //   }
-    // }, [media, mediaFiles]);
-
-    // const handleDeleteMedia = () => {
-    //   dispatch();
-    //   // postCRUD(
-    //   //   {
-    //   //     crud: "DELETE-MEDIA",
-    //   //     postId: product?._id,
-    //   //     target: product?.target?.postFor,
-    //   //     targetId: product?.target?.targetId,
-    //   //     mediaId: product?._id,
-    //   //   },
-    //   //   "DELETE-MEDIA"
-    //   // )
-
-    //   // setMediaFiles((prev) => {
-    //   //   let newFiles = prev.filter((x) => x._id !== product._id);
-    //   //   setPost((prev) => {
-    //   //     return {
-    //   //       ...prev,
-    //   //       media: newFiles,
-    //   //     };
-    //   //   });
-    //   //   return newFiles;
-    //   // });
-    // };
+ 
 
     useEffect(() => {
       if (product) {
@@ -194,61 +162,7 @@ handleTourPayment,
       history.goBack();
     }, [history]);
 
-    const productInfoSlide = useMemo(
-      () => ({
-        ctype,
-        handleClose: goBack,
-        parentDialog: true,
-        product,
-        currency,
-        setTrack,
-        totalLikes: product?.postId?.totalLikes || totalLikes || 0,
-        postLikes: product?.postId?.postLikes || postLikes || 0,
-        totalComments: product?.postId?.totalComments || totalComments || 0,
-        postSaved: product?.postId?.postSaved || postSaved || 0,
-        productPage,
-        taxRate,
-        isAdmin,
-        isManager,
-        isMobile,
-        track,
-        accountId,
-        history,
-        account,
-      }),
-      [
-        goBack,
-        ctype,
-        currency,
-        productPage,
-        totalLikes,
-        postLikes,
-        totalComments,
-        postSaved,
-        taxRate,
-        account,
-
-        isAdmin,
-        isManager,
-        accountId,
-        history,
-        product,
-        isMobile,
-        track,
-      ]
-    );
  
-    const authrozationProps = useMemo(
-      () => ({
-        history,
-        token,
-        isMobile,
-        ctype,
-        handleClose: goBack,
-      }),
-      [history, token, isMobile, ctype, goBack]
-    );
-
     return (
       <>
         <div

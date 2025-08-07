@@ -5,7 +5,7 @@
   margin: 1rem;
 
   &Item {
-    border: 1px solid #4d0552;
+    border: 1px solid #121417;
     border-radius: 5px;
     padding: 10px;
 
@@ -32,7 +32,7 @@
 
   &Card {
     padding: 1rem;
-    border: 1px solid #4d0552;
+    border: 1px solid #121417;
     border-radius: 10px;
 
     &Title {
@@ -58,50 +58,54 @@
   }
 }
 
-.mainHomeContainer{
-  &Top{
-    display: flex
-    ;
-        gap: 1px;
-        height: 45vh;
-        &Left{
-          width: 60vw;
-          height: inherit;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-        }
-        &Right{
-          width: 39vw;
-          display: flex
-      ;
-          flex-direction: column;
-          gap: 1rem;
-          overflow-x: hidden;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          padding: 0 .5rem;
-          &Title{
-            font-size: 1.5rem;
-            font-weight: 700;
-          }
-          &Description{
-            font-size: .8rem;
-          }
-        }
+.mainHomeContainer {
+  &Top {
+    display: flex;
+    gap: 1px;
+    height: 45vh;
+
+    &Left {
+      width: 60vw;
+      height: inherit;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &Right {
+      width: 39vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-x: hidden;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 .5rem;
+
+      &Title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      &Description {
+        font-size: .8rem;
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 779px) {
-  .mainHomeContainerTop{
+  .mainHomeContainerTop {
     flex-direction: column;
     height: fit-content;
-    &Left{
+
+    &Left {
       width: 100vw;
       height: 55vh;
     }
-    &Right{
+
+    &Right {
       width: 100vw;
       padding: 1.5rem .5rem;
     }
@@ -113,4 +117,3 @@
     gap: 20px;
   }
 }
-

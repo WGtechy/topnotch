@@ -62,6 +62,7 @@
     &Item {
         width: 10rem;
         cursor: pointer;
+
         &Image {
             height: 10rem;
             width: inherit;
@@ -74,18 +75,20 @@
         &Image:hover {
             scale: 1.02
         }
-        &Content{
+
+        &Content {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 8rem;
+
             &Title {}
-    
+
             &Price {
                 font-weight: 500;
                 font-size: 1.1rem;
             }
-    
+
             &CartBtn {
                 background: #121417;
                 padding: .3rem 1rem;
@@ -97,14 +100,14 @@
                 cursor: pointer;
                 transition: .3s ease-in-out;
             }
-    
+
             &CartBtn:hover {
                 scale: 1.02;
                 transition: .3s ease-in-out;
             }
-    
-          
-    
+
+
+
             &Location {
                 width: -webkit-fill-available;
                 font-size: .8rem;
@@ -119,7 +122,7 @@
 }
 
 .applyBackground {
-    background: #4d0552 !important;
+    background: #121417 !important;
     color: #e3e3e3;
 
 }

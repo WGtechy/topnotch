@@ -9,8 +9,6 @@ import React, {
 import {
   IoBookmark,
   IoCart,
-  IoPause,
-  IoPlay,
   IoShareSocial,
   IoVolumeHigh,
   IoVolumeMute,
@@ -27,7 +25,6 @@ import { useDispatch } from "react-redux";
 import { frontURL } from "../../../utilities-config/urlConfig";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import ProductInfoSlide1 from "../productDetailFolder/productDescription/component/ProductInfoSlide1";
-import TourSlide from "./TourSlide";
 import useUrlSearchParams from "../../../utilities-config/useUrlSearchParams";
 
 const HomePage = forwardRef(
@@ -45,7 +42,6 @@ const HomePage = forwardRef(
       account,
       index,
       toggleVolume,
-      token,
       accountId,
       postId,
       focusItem,
@@ -88,67 +84,12 @@ const HomePage = forwardRef(
     const [trackId, setTrackId] = useState(null);
     const [fileIndexTrackId, setFileIndexTrackId] = useState(null);
 
-    // const focusElement = useCallback(
-    //   (node) => {
-    //     // if (observer.current) observer.current.disconnect();
-    //     observer.current = new IntersectionObserver(
-    //       (entries) => {
-    //         let entry = null;
-    //         for (entry of entries) {
-    //           if (
-    //             entry?.isIntersecting &&
-    //             entry.target?.classList[0] === "homeContentScreenItemMediaItemVideo"
-    //           ) {
-    //             if (focusItem === postId) {
-    //               entry.target?.play();
-    //             } else {
-    //               entry.target?.pause();
-    //             }
-    //             mediaFileRef.current = entry.target;
-    //             setMediaIsPlaying(true);
-    //             setTrackId(entry.target.getAttribute("data"));
-    //           } else {
-    //             if (
-    //               entry.target?.classList[0] === "homeContentScreenItemMediaItemVideo"
-    //             ) {
-    //               entry.target?.pause();
-    //               mediaFileRef.current = entry.target;
-    //             }
-    //             // setMediaIsPlaying(false);
-    //           }
-    //           if (entry.isIntersecting) {
-    //             setFileIndexTrackId(entry.target.getAttribute("data"));
-    //           }
-    //         }
-    //       },
-    //       {
-    //         threshold: 0.5,
-    //         // rootMargin: "100px"
-    //       }
-    //     );
-    //     if (node) observer?.current?.observe(node);
-    //   },
-    //   [postId, focusItem]
-    // );
-
-    // useEffect(() => {
-    //   if (trackId) {
-    //     setTrack(mediaFiles.find((x) => x._id === trackId));
-    //   }
-    // }, [trackId, setTrack, mediaFiles]);
- 
     const handleClickPlay = useCallback(
       ({ action }) =>
         () => {
           if (action === "play") {
             setMediaIsPlaying((prev) => !prev);
-            mediaFileRef.current.play();
-            //   currentTime: mediaFileRef.current.currentTime,
-            //   paused: mediaFileRef.current.paused,
-            //   ended: mediaFileRef.current.ended,
-            //   readyState: mediaFileRef.current.readyState,
-            //   HAVE_CURRENT_DATA: mediaFileRef.current.HAVE_CURRENT_DATA,
-          } else if (action === "pause") {
+            mediaFileRef.current.play(); } else if (action === "pause") {
             setMediaIsPlaying((prev) => !prev);
             mediaFileRef.current.pause();
           }
@@ -225,24 +166,8 @@ const HomePage = forwardRef(
       },
       { icon: IoCart, action: checkout, display: isMobile, name: "Checkout" },
     ];
-
-    const playMediaIcon = {
-      icon: mediaIsPlaying ? IoPause : IoPlay,
-      action: mediaIsPlaying
-        ? handleClickPlay({ action: "pause" })
-        : handleClickPlay({ action: "play" }),
-      display: videoMimtype.includes(track?.mimetype) ? true : false,
-    };
-
-    const handleSwitchIconsView = useCallback(
-      (data) => () => {
-        if (!isMobile) {
-          setShowIcons(data);
-        }
-      },
-      [isMobile]
-    );
-
+ 
+   
     useEffect(() => {
       if (isMobile) {
         setShowIcons(true);
@@ -275,39 +200,7 @@ const HomePage = forwardRef(
     const goBack = useCallback(() => {
       history.goBack();
     }, [history]);
- 
-    // const productInfoSlide = useMemo(
-    //   () => ({
-    //     ctype,
-    //     handleClose: goBack,
-    //     parentDialog: true,
-    //     product,
-    //     currency,
-    //     setTrack,
-    //     productPage,
-    //     taxRate,
-    //     isMobile,
-    //     track,
-    //     accountId,
-    //     history,
-    //     totalLikes: product?.postId?.totalLikes,
-    //     totalComments: product?.postId?.totalComments,
-    //     account,
-    //   }),
-    //   [
-    //     goBack,
-    //     ctype,
-    //     currency,
-    //     productPage,
-    //     taxRate,
-    //     account,
-    //     accountId,
-    //     history,
-    //     product,
-    //     isMobile,
-    //     track,
-    //   ]
-    // );
+  
  const productInfoSlide = useMemo(
       () => ({
         ctype,
@@ -316,10 +209,6 @@ const HomePage = forwardRef(
         productId: product?._id,
         currency,
         setTrack,
-        // totalLikes: product?.postId?.totalLikes || totalLikes || 0,
-        // postLikes: product?.postId?.postLikes || postLikes || 0,
-        // totalComments: product?.postId?.totalComments || totalComments || 0,
-        // postSaved: product?.postId?.postSaved || postSaved || 0,
         productPage,
         taxRate,
         isAdmin,
@@ -335,10 +224,6 @@ const HomePage = forwardRef(
         ctype,
         currency,
         productPage,
-        // totalLikes,
-        // postLikes,
-        // totalComments,
-        // postSaved,
         taxRate,
         account,
 
@@ -361,16 +246,7 @@ const HomePage = forwardRef(
     accountId,
     data: product,
   };
-    const authrozationProps = useMemo(
-      () => ({
-        history,
-        token,
-        isMobile,
-        ctype,
-        handleClose: goBack,
-      }),
-      [history, token, isMobile, ctype, goBack]
-    );
+   
 
     useEffect(() => {
       if (mediaFileRef.current && focusItem !== postId) {
@@ -386,9 +262,7 @@ const HomePage = forwardRef(
           className="homeContentScreenItem"
           ref={ref}
           data={postId}
-          index={index + 1}
-          // onMouseEnter={handleFocus}
-          // onMouseLeave={handleUnFocuse}
+          index={index + 1} 
         >
           <div className="homeContentScreenItemMedia">
             <div className="homeContentScreenItemMediaItem" ref={imageListRef}>
@@ -412,47 +286,8 @@ const HomePage = forwardRef(
                       loading="lazy"
                     />
 
-              {/* {!!product?.videos?.length &&
-                product?.videos.map((item, i) =>
-                  videoMimtype.includes(item?.mimetype) ? (
-                    <video
-                      // ref={focusElement || null}
-                      alt="item-media"
-                      data={item?._id}
-                      key={i}
-                      src={item?.media}
-                      onContextMenu={(e) => e.preventDefault()}
-                      loop
-                      // onError={(e) => handleImageError(e)}
-                      className="homeContentScreenItemMediaItemVideo"
-                      preload="auto"
-                      title={item.name}
-                      webkit-playsinline="true"
-                      playsInline={true}
-                      auto={true}
-                      // autoPlay={  focusItem === postId ? true : false}
-                      muted={volume ? "" : "muted"}
-                      loading="lazy"
-                    />
-                  ) : (
-                    imageMimtype.includes(item?.mimetype) && (
-                      <img
-                        key={i}
-                        data={item?._id}
-                        src={item.media}
-                        alt={item.name}
-                        // ref={focusElement || null}
-                        className="homeContentScreenItemMediaItemImg"
-                        loading="lazy"
-                        onError={(e) => handleImageError(e)}
-                        onContextMenu={(e) => e.preventDefault()}
-                      />
-                    )
-                  )
-                )} */}
             </div>
             
-            {/* <div className={showIcons ? "homeContentScreenItemMediaSession" : "homeContentScreenItemMediaSession hideAllIcons" }onClick={playMediaIcon.action} > <playMediaIcon.icon /></div> */}
             <div
               className={
                 showIcons
@@ -495,25 +330,7 @@ const HomePage = forwardRef(
                 ) : null
               )}
             </div>
-            {videoMimtype.includes(track?.mimetype) && getTime()}
-            {/* <div
-              className={
-                showIcons
-                  ? "homeContentScreenItemMediaScroll"
-                  : "homeContentScreenItemMediaScroll hideAllIcons"
-              }
-            >
-              <div className="homeContentScreenItemMediaScrollUp" onClick={handleBack}>
-                <IoArrowBack />
-              </div>
-              <div
-                className="homeContentScreenItemMediaScrollDown"
-                onClick={handleForward}
-              >
-                <IoArrowForward />
-              </div>
-            </div> */}
-           
+            {videoMimtype.includes(track?.mimetype) && getTime()}           
           </div>
           <div className="homeContentScreenItemDescription">
               {product?.media?.length > 1 && (
@@ -556,19 +373,10 @@ const HomePage = forwardRef(
                     ? "Proceed to Booking"
                     : "Checkout"}{" "}
                 </div>
-                {product?.isOnsiteTour || product?.isVirtualTour ? (
-                  <div
-                    className="homeContentScreenItemDescriptionBtnsItem btnTour"
-                    onClick={handleTourSlide}
-                  >
-                    Take a tour
-                  </div>
-                ) : null}
               </div>
             </div>
         </div>
         <ProductInfoSlide1 {...productInfoSlide} />
-      <TourSlide {...tourProps} />
 
       </>
     );

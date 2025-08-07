@@ -26,20 +26,20 @@ import useUrlSearchParams from "../../utilities-config/useUrlSearchParams";
 
 const AddProduct = (props) => {
   const {
-  isAdmin,
-  isMobile,
-  locations,
-  accountId,
-  autoCategories,
-  buildingCategories,
-  propertyFeatures,
-} = props
-  const dispatch = useDispatch();  
+    isAdmin,
+    isMobile,
+    locations,
+    accountId,
+    autoCategories,
+    buildingCategories,
+    propertyFeatures,
+  } = props;
+  const dispatch = useDispatch();
   const { loadingNew, newProduct, product } = useSelector(
     (state) => state.products
   );
   const { data: app } = useSelector((state) => state.app);
-  const {ptype} = useUrlSearchParams()
+  const { ptype } = useUrlSearchParams();
   // const { loadingNew, newProduct } = useSelector((state) => state.products);
   const virtualTourFee = useRef(0);
   const onsiteTourFee = useRef(0);
@@ -123,7 +123,8 @@ const AddProduct = (props) => {
     (onsiteTourDescription.current = e.target.value);
   const handleServiceChargeDescription = (e) =>
     (serviceChargeDescription.current = e.target.value);
-  const handleFullDescription = (e) => fullDescription.current = e.target.value
+  const handleFullDescription = (e) =>
+    (fullDescription.current = e.target.value);
   const handleBedroom = (e) => (bedrooms.current = e.target.value);
   const handleToilets = (e) => (toilets.current = e.target.value);
 
@@ -148,7 +149,6 @@ const AddProduct = (props) => {
     }
   };
 
-
   const runOnce = useRef(true);
   useEffect(() => {
     if (isAdmin && props?.match?.params.slug && runOnce.current) {
@@ -156,8 +156,6 @@ const AddProduct = (props) => {
       return (runOnce.current = false);
     }
   }, [dispatch, isAdmin, props]);
-
-
 
   useEffect(() => {
     if (!!locations?.length && onceCount.current && newProduct?._id) {
@@ -208,7 +206,7 @@ const AddProduct = (props) => {
       setPolicies(product?.policies);
       setMarketingType(product?.marketingType);
       setPriceDependent(product?.priceDependent);
-      setAdverts(product?.adverts)
+      setAdverts(product?.adverts);
       setLive(product?.live ? "Live" : "Draft");
       setCountry(product?.location?.country);
       setCity(product?.location?.city);
@@ -256,7 +254,7 @@ const AddProduct = (props) => {
   //   []
   // );
 
-  const initOnce = useRef(true)
+  const initOnce = useRef(true);
   useEffect(() => {
     if (!product && ptype && initOnce.current) {
       dispatch(
@@ -267,16 +265,15 @@ const AddProduct = (props) => {
           addedBy: accountId,
         })
       );
-      return initOnce.current = false;
+      return (initOnce.current = false);
     }
   }, [dispatch, ptype, product, accountId]);
 
-  useEffect(()=>{
-    if(newProduct || product){
-      setProductType(newProduct?.productType || product?.productType)
+  useEffect(() => {
+    if (newProduct || product) {
+      setProductType(newProduct?.productType || product?.productType);
     }
-  },[newProduct, product])
-
+  }, [newProduct, product]);
 
   function sendToServer(e) {
     e.preventDefault();
@@ -296,7 +293,9 @@ const AddProduct = (props) => {
       cautionFee: Number(cautionFee.current),
       minimumPurchase: Number(minimumPurchase.current),
       maximumPurchase: Number(maximumPurchase.current),
-      virtualTourDescription: isVirtualTour ? virtualTourDescription.current : "",
+      virtualTourDescription: isVirtualTour
+        ? virtualTourDescription.current
+        : "",
       onsiteTourDescription: isOnsiteTour ? onsiteTourDescription.current : "",
       virtualTourFee: isVirtualTour ? Number(virtualTourFee.current) : 0,
       onsiteTourFee: isOnsiteTour ? Number(onsiteTourFee.current) : 0,
@@ -334,14 +333,13 @@ const AddProduct = (props) => {
       features,
       recommendations,
       adverts,
-      images
+      images,
     };
     dispatch(productCrud(data));
     setBannerImage(null);
     setCheckInDates([]);
-    if(ptype){
-
-      props.history.push(`/?c=${ptype}`)
+    if (ptype) {
+      props.history.push(`/?c=${ptype}`);
     } else {
       // props.history.back()
     }
@@ -479,609 +477,586 @@ const AddProduct = (props) => {
 
   return (
     <>
-        {loadingNew
-          ? componentLoader
-          : newProduct?._id || product?._id ? (
-              <div className="productPage">
-                <form className="productPageForm" onSubmit={sendToServer}>
-                 
-                  <div className="productPageFormSection1">
-                    <InputComponent
-                      type={"text"}
-                      placeholder="Name"
-                      defaultValue={productTitle.current}
-                      title="Product name"
-                      showLabel={true}
-                      required={true}
-                      display={true}
-                      onChange={handleProductTitle}
-                    />
-                    <MultipleSelect
-                      name="Select category"
-                      data={
-                        productType === "Automobile"
-                          ? autoCategories
-                          : buildingCategories
-                      }
-                      display={
-                        !["Interior", "Service", "Product"].includes(
-                          productType
-                        )
-                          ? true
-                          : false
-                      }
-                      selectedItems={selectedCategories}
-                      setSelectedItems={setSelectedCategories}
-                      newItems={newCategories}
-                      setNewItems={setNewCategories}
-                    />
-                  </div>
-                  <div className="productPageFormSectionImage">
-                    <div className="productPageFormSectionImageTitle">
-                      {" "}
-                      Product banner{" "}
-                    </div>
-                    <ImageUpload
-                      isSingle={true}
-                      media={bannerImage}
-                      display={true}
-                      filesFor={"banner"}
-                      local={true}
-                      htmlFor={"banner"}
-                      isImage={true}
-                      title={""}
-                      btnText={
-                        bannerImage ? "Change image" : "Click to add image"
-                      }
-                      isVideo={false}
-                      setMedia={setBannerImage}
-                        target={"Product"}
-                      targetId={product?._id || newProduct?._id}
-                      accountId={accountId}
-                    />
-                  </div>
+      {loadingNew ? (
+        componentLoader
+      ) : newProduct?._id || product?._id ? (
+        <div className="productPage">
+          <form className="productPageForm" onSubmit={sendToServer}>
+            <div className="productPageFormSection1">
+              <InputComponent
+                type={"text"}
+                placeholder="Name"
+                defaultValue={productTitle.current}
+                title="Product name"
+                showLabel={true}
+                required={true}
+                display={true}
+                onChange={handleProductTitle}
+              />
+              <MultipleSelect
+                name="Select category"
+                data={
+                  productType === "Automobile"
+                    ? autoCategories
+                    : buildingCategories
+                }
+                display={
+                  !["Interior", "Service", "Product"].includes(productType)
+                    ? true
+                    : false
+                }
+                selectedItems={selectedCategories}
+                setSelectedItems={setSelectedCategories}
+                newItems={newCategories}
+                setNewItems={setNewCategories}
+              />
+            </div>
+            <div className="productPageFormSectionImage">
+              <div className="productPageFormSectionImageTitle">
+                {" "}
+                Product banner{" "}
+              </div>
+              <ImageUpload
+                isSingle={true}
+                media={bannerImage}
+                display={true}
+                filesFor={"banner"}
+                local={true}
+                htmlFor={"banner"}
+                isImage={true}
+                title={""}
+                btnText={bannerImage ? "Change image" : "Click to add image"}
+                isVideo={false}
+                setMedia={setBannerImage}
+                target={"Product"}
+                targetId={product?._id || newProduct?._id}
+                accountId={accountId}
+              />
+            </div>
 
-                  {["Hotel", "Shortlet", "Automobile", "Property"].includes(
+            {["Hotel", "Shortlet", "Automobile", "Property"].includes(
+              productType
+            ) && (
+              <div className="productPageFormSectionImage">
+                <div className="productPageFormSectionImageTitle">
+                  Post media
+                </div>
+                <ImageUpload
+                  filesFor={"videos"}
+                  local={true}
+                  htmlFor={"videos"}
+                  isSingle={false}
+                  media={videos}
+                  display={true}
+                  target={"Product"}
+                  title={""}
+                  isVideo={true}
+                  btnText={"Add videos"}
+                  setMedia={setVideos}
+                  targetId={product?._id || newProduct?._id}
+                  accountId={accountId}
+                />
+              </div>
+            )}
+            <div className="productPageFormSectionImage">
+              <div className="productPageFormSectionImageTitle"> images</div>
+              <ImageUpload
+                filesFor={"images"}
+                local={true}
+                isSingle={false}
+                media={images}
+                display={true}
+                htmlFor={"images"}
+                title={""}
+                isImage={true}
+                isVideo={false}
+                btnText={"Add image files. Images only"}
+                setMedia={setImages}
+                targetId={product?._id || newProduct?._id}
+                accountId={accountId}
+                target={"Product"}
+              />
+            </div>
+
+            <div className="productPageFormSection3 priceSection">
+              <SelectComponent
+                name={"Market type"}
+                required={true}
+                placeholder={"Market type"}
+                options={["Sale", "Rent"]}
+                defaultValue={marketingType}
+                handleChangeSelect={handleMarketingType}
+                display={
+                  !["Interior", "Service", "Product"].includes(productType)
+                    ? true
+                    : false
+                }
+                showLabel={true}
+                title="Market type"
+              />
+              <SelectComponent
+                name={"Rent period"}
+                required={true}
+                placeholder={"Rent period"}
+                options={[
+                  "Select period",
+                  "Minute",
+                  "Hour",
+                  "Day",
+                  "Night",
+                  "Month",
+                  "Year",
+                ]}
+                defaultValue={priceDependent}
+                handleChangeSelect={handlePriceDependent}
+                display={
+                  !["Interior", "Service", "Product"].includes(productType) &&
+                  marketingType === "Rent"
+                    ? true
+                    : false
+                }
+                showLabel={true}
+                title="Rent period"
+              />
+              <InputComponent
+                type={"number"}
+                placeholder="Price"
+                defaultValue={product?.price || 0}
+                title="Price"
+                showLabel={true}
+                display={true}
+                required={false}
+                min={1000}
+                max={100000000000}
+                onChange={handlePrice}
+              />
+
+              <InputComponent
+                type={"number"}
+                placeholder="discount"
+                defaultValue={product?.discount || 0}
+                title="discount"
+                showLabel={true}
+                display={true}
+                required={false}
+                min={0}
+                max={10000000}
+                onChange={handleDiscount}
+              />
+            </div>
+            {marketingType === "Rent" &&
+            ["Hotel", "Shortlet", "Automobile", "Property"].includes(
+              productType
+            ) ? (
+              <div className="productPageFormSection3 priceSection">
+                <InputComponent
+                  type={"number"}
+                  placeholder={
+                    ["Hotel", "Shortlet", "Property"].includes
+                      ? "Minimum stay"
+                      : productType === "Automobile"
+                      ? "Minimum hire"
+                      : "Minimum purchase"
+                  }
+                  defaultValue={minimumPurchase.current}
+                  title={
+                    ["Shortlet", "Property"].includes(productType)
+                      ? "Minimum stay"
+                      : productType === "Automobile"
+                      ? "Minimum hire"
+                      : "Minimum purchase"
+                  }
+                  showLabel={true}
+                  display={true}
+                  required={false}
+                  min={1}
+                  max={10000000}
+                  onChange={handleMinimumPurchase}
+                />
+                <InputComponent
+                  type={"number"}
+                  placeholder={
+                    ["Hotel", "Shortlet", "Property"].includes
+                      ? "Maximum stay"
+                      : productType === "Automobile"
+                      ? "Maximum hire"
+                      : "Maximum purchase"
+                  }
+                  defaultValue={maximumPurchase.current}
+                  title={
+                    ["Shortlet", "Property"].includes(productType)
+                      ? "Maximum stay"
+                      : productType === "Automobile"
+                      ? "Maximum hire"
+                      : "Maximum purchase"
+                  }
+                  showLabel={true}
+                  display={true}
+                  required={false}
+                  min={1}
+                  max={1000000000}
+                  onChange={handleMaximumPurchase}
+                />
+              </div>
+            ) : null}
+
+            <div className="productPageFormSection3 priceSection">
+              <InputComponent
+                type={"number"}
+                placeholder="Agency fee"
+                defaultValue={agencyFee.current}
+                title="Agency fee"
+                showLabel={true}
+                display={
+                  !["Interior", "Service", "Product", "Automobile"].includes(
                     productType
-                  ) && (
-                    <div className="productPageFormSectionImage">
-                      <div className="productPageFormSectionImageTitle">
-                        Post media
-                      </div>
-                      <ImageUpload
-                        filesFor={"videos"}
-                        local={true}
-                        htmlFor={"videos"}
-                        isSingle={false}
-                        media={videos}
-                        display={true}
-                        target={"Product"}
-                        title={""}
-                        isVideo={true}
-                        btnText={"Add videos"}
-                        setMedia={setVideos}
-                      targetId={product?._id || newProduct?._id}
-                      accountId={accountId}
-                      />
-                    </div>
-                  )}
-                    <div className="productPageFormSectionImage">
-                      <div className="productPageFormSectionImageTitle">
-                        {" "}
-                        images
-                      </div>
-                      <ImageUpload
-                        filesFor={"images"}
-                        local={true}
-                        isSingle={false}
-                        media={images}
-                        display={true}
-                        htmlFor={"images"}
-                        title={""}
-                        isImage={true}
-                        isVideo={false}
-                        btnText={"Add image files. Images only"}
-                        setMedia={setImages}
-                      targetId={product?._id || newProduct?._id}
-                      accountId={accountId}
-                        target={"Product"}
-                      />
-
-                    </div>
-                  
-
-                  <div className="productPageFormSection3 priceSection">
-                    <SelectComponent
-                      name={"Market type"}
-                      required={true}
-                      placeholder={"Market type"}
-                      options={["Sale", "Rent"]}
-                      defaultValue={marketingType}
-                      handleChangeSelect={handleMarketingType}
-                      display={
-                        !["Interior", "Service", "Product"].includes(
-                          productType
-                        )
-                          ? true
-                          : false
-                      }
-                      showLabel={true}
-                      title="Market type"
-                    />
-                     <SelectComponent
-                      name={"Rent period"}
-                      required={true}
-                      placeholder={"Rent period"}
-                      options={[
-                        "Select period",
-                        "Minute",
-                        "Hour",
-                        "Day",
-                        "Night",
-                        "Month",
-                        "Year",
-                      ]}
-                      defaultValue={priceDependent}
-                      handleChangeSelect={handlePriceDependent}
-                      display={
-                        !["Interior", "Service", "Product"].includes(
-                          productType
-                        ) && marketingType === "Rent"
-                          ? true
-                          : false
-                      }
-                      showLabel={true}
-                      title="Rent period"
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Price"
-                      defaultValue={product?.price || 0}
-                      title="Price"
-                      showLabel={true}
-                      display={true}
-                      required={false}
-                      min={1000}
-                      max={100000000000}
-                      onChange={handlePrice}
-                    />
-
-                   
-                    <InputComponent
-                      type={"number"}
-                      placeholder="discount"
-                      defaultValue={product?.discount || 0}
-                      title="discount"
-                      showLabel={true}
-                      display={true}
-                      required={false}
-                      min={0}
-                      max={10000000}
-                      onChange={handleDiscount}
-                    />
-                  </div>
-                 {marketingType === "Rent" && ["Hotel", "Shortlet", "Automobile", "Property"].includes(productType) ? <div className="productPageFormSection3 priceSection">
-                    <InputComponent
-                      type={"number"}
-                      placeholder={
-                        ["Hotel", "Shortlet", "Property"].includes
-                          ? "Minimum stay" : productType === "Automobile" ? "Minimum hire"
-                          : "Minimum purchase"
-                      }
-                      defaultValue={minimumPurchase.current}
-                      title={["Shortlet", "Property"].includes(productType) ? "Minimum stay" : productType === "Automobile" ? "Minimum hire" : "Minimum purchase"}
-                      showLabel={true}
-                      display={true}
-                      required={false}
-                      min={1}
-                      max={10000000}
-                      onChange={handleMinimumPurchase}
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder={
-                        ["Hotel", "Shortlet", "Property"].includes
-                          ? "Maximum stay" : productType === "Automobile" ? "Maximum hire"
-                          : "Maximum purchase"
-                      }
-                      defaultValue={maximumPurchase.current}
-                      title={["Shortlet", "Property"].includes(productType) ? "Maximum stay" : productType === "Automobile" ? "Maximum hire" : "Maximum purchase"}
-                      showLabel={true}
-                      display={true}
-                      required={false}
-                      min={1}
-                      max={1000000000}
-                      onChange={handleMaximumPurchase}
-                    />
-                  </div> : null}
-
-                  <div className="productPageFormSection3 priceSection">
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Agency fee"
-                      defaultValue={agencyFee.current}
-                      title="Agency fee"
-                      showLabel={true}
-                      display={
-                        ![
-                          "Interior",
-                          "Service",
-                          "Product",
-                          "Automobile",
-                        ].includes(productType)
-                          ? true
-                          : false
-                      }
-                      required={false}
-                      min={0}
-                      max={100000000000}
-                      onChange={handleAgencyFee}
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Legal fee"
-                      defaultValue={legalFee.current}
-                      title="Legal fee"
-                      showLabel={true}
-                      display={
-                        ![
-                          "Interior",
-                          "Service",
-                          "Product",
-                          "Automobile",
-                        ].includes(productType)
-                          ? true
-                          : false
-                      }
-                      required={false}
-                      min={0}
-                      max={100000000000}
-                      onChange={handleLegalFee}
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Platform fee"
-                      defaultValue={platformFee.current}
-                      title="Platform fee"
-                      showLabel={true}
-                      display={
-                        isAdmin
-                          ? app?.settings?.howAreWeEarning ===
-                            "Earning will be manually set during product upload."
-                            ? true
-                            : false
-                          : false
-                      }
-                      required={true}
-                      min={0}
-                      max={100000000000}
-                      onChange={handlePlatformFee}
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Caution fee"
-                      defaultValue={cautionFee.current}
-                      title="Caution fee"
-                      showLabel={true}
-                      display={
-                        ![
-                          "Interior",
-                          "Service",
-                          "Product",
-                          "Automobile",
-                        ].includes(productType)
-                          ? true
-                          : false
-                      }
-                      required={false}
-                      min={0}
-                      max={100000000000}
-                      onChange={handleCautionFee}
-                    />
-                    <InputComponent
-                      type={"number"}
-                      placeholder="Service charge"
-                      defaultValue={serviceCharge}
-                      title="Service charge"
-                      showLabel={true}
-                      display={
-                        ![
-                          "Interior",
-                          "Service",
-                          "Product",
-                          "Automobile",
-                        ].includes(productType)
-                          ? true
-                          : false
-                      }
-                      required={false}
-                      min={0}
-                      max={100000000000}
-                      onChange={handleServiceCharge}
-                    />
-                  </div>
-                  {serviceCharge ? (
-                    <div className="productPageFormSection2">
-                      <TextAreaComponent
-                        defaultValue={serviceChargeDescription.current}
-                        onChange={handleServiceChargeDescription}
-                        display={true}
-                        placeholder={"Service charge description"}
-                        name={"Service charge description"}
-                        rows={4}
-                        required={true}
-                        title="Service charge description"
-                      />
-                    </div>
-                  ) : null}
-
-                  {!["Interior", "Service", "Product"].includes(
+                  )
+                    ? true
+                    : false
+                }
+                required={false}
+                min={0}
+                max={100000000000}
+                onChange={handleAgencyFee}
+              />
+              <InputComponent
+                type={"number"}
+                placeholder="Legal fee"
+                defaultValue={legalFee.current}
+                title="Legal fee"
+                showLabel={true}
+                display={
+                  !["Interior", "Service", "Product", "Automobile"].includes(
                     productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <TimeComponent
-                        minDate={new Date()}
-                        onChange={handleCheckInTime}
-                        label={
-                          productType === "Automobile"
-                            ? "Pickup"
-                            : "Check-In time"
-                        }
-                        display={marketingType === "Rent" ? true : false}
-                        required={false}
-                        defaultValue={null}
-                        name={
-                          productType === "Automobile"
-                            ? "Pickup"
-                            : "Check-In time"
-                        }
-                        title={
-                          productType === "Automobile"
-                            ? "Pickup"
-                            : "Check-In time"
-                        }
-                      />
-                      <TimeComponent
-                        minDate={new Date()}
-                        onChange={handleCheckOutTime}
-                        label={
-                          productType === "Automobile"
-                            ? "Return time"
-                            : "Check-Out Time"
-                        }
-                        display={marketingType === "Rent" ? true : false}
-                        required={false}
-                        defaultValue={null}
-                        name={
-                          productType === "Automobile"
-                            ? "Return time"
-                            : "Check-Out Time"
-                        }
-                        title={
-                          productType === "Automobile"
-                            ? "Return time"
-                            : "Check-Out Time"
-                        }
-                      />
-                    </div>
-                  )}
-
-                  {!["Interior", "Service", "Product"].includes(
+                  )
+                    ? true
+                    : false
+                }
+                required={false}
+                min={0}
+                max={100000000000}
+                onChange={handleLegalFee}
+              />
+              <InputComponent
+                type={"number"}
+                placeholder="Platform fee"
+                defaultValue={platformFee.current}
+                title="Platform fee"
+                showLabel={true}
+                display={
+                  isAdmin
+                    ? app?.settings?.howAreWeEarning ===
+                      "Earning will be manually set during product upload."
+                      ? true
+                      : false
+                    : false
+                }
+                required={true}
+                min={0}
+                max={100000000000}
+                onChange={handlePlatformFee}
+              />
+              <InputComponent
+                type={"number"}
+                placeholder="Caution fee"
+                defaultValue={cautionFee.current}
+                title="Caution fee"
+                showLabel={true}
+                display={
+                  !["Interior", "Service", "Product", "Automobile"].includes(
                     productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <CheckComponent
-                        labelColor={{ color: "#4d0552" }}
-                        placeholder={"Taxable"}
-                        defaultValue={taxable}
-                        required={false}
-                        title="Taxable"
-                        display={true}
-                        onChange={handleTaxable}
-                        showLabel={true}
-                      />
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(
+                  )
+                    ? true
+                    : false
+                }
+                required={false}
+                min={0}
+                max={100000000000}
+                onChange={handleCautionFee}
+              />
+              <InputComponent
+                type={"number"}
+                placeholder="Service charge"
+                defaultValue={serviceCharge}
+                title="Service charge"
+                showLabel={true}
+                display={
+                  !["Interior", "Service", "Product", "Automobile"].includes(
                     productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <CheckComponent
-                        labelColor={{ color: "#4d0552" }}
-                        placeholder={"Virtual tour"}
-                        defaultValue={isVirtualTour}
-                        required={false}
-                        title="Virtual tour"
-                        display={true}
-                        onChange={handleisVirtualTour}
-                        showLabel={true}
-                      />
+                  )
+                    ? true
+                    : false
+                }
+                required={false}
+                min={0}
+                max={100000000000}
+                onChange={handleServiceCharge}
+              />
+            </div>
+            {serviceCharge ? (
+              <div className="productPageFormSection2">
+                <TextAreaComponent
+                  defaultValue={serviceChargeDescription.current}
+                  onChange={handleServiceChargeDescription}
+                  display={true}
+                  placeholder={"Service charge description"}
+                  name={"Service charge description"}
+                  rows={4}
+                  required={true}
+                  title="Service charge description"
+                />
+              </div>
+            ) : null}
 
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Virtual tour fee"
-                        defaultValue={virtualTourFee.current}
-                        title="Virtual tour fee"
-                        showLabel={true}
-                        display={isVirtualTour}
-                        required={isVirtualTour}
-                        min={1}
-                        max={1000000000}
-                        onChange={handleVirtualTourFee}
-                      />
-                      <TextAreaComponent
-                        defaultValue={virtualTourDescription.current}
-                        onChange={handleVirtualTourDescription}
-                        display={isVirtualTour}
-                        required={true}
-                        placeholder={"Virtual tour description"}
-                        name={"Virtual tour description"}
-                        rows={4}
-                        title="Virtual tour description"
-                      />
-                    </div>
-                  )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <TimeComponent
+                  minDate={new Date()}
+                  onChange={handleCheckInTime}
+                  label={
+                    productType === "Automobile" ? "Pickup" : "Check-In time"
+                  }
+                  display={marketingType === "Rent" ? true : false}
+                  required={false}
+                  defaultValue={null}
+                  name={
+                    productType === "Automobile" ? "Pickup" : "Check-In time"
+                  }
+                  title={
+                    productType === "Automobile" ? "Pickup" : "Check-In time"
+                  }
+                />
+                <TimeComponent
+                  minDate={new Date()}
+                  onChange={handleCheckOutTime}
+                  label={
+                    productType === "Automobile"
+                      ? "Return time"
+                      : "Check-Out Time"
+                  }
+                  display={marketingType === "Rent" ? true : false}
+                  required={false}
+                  defaultValue={null}
+                  name={
+                    productType === "Automobile"
+                      ? "Return time"
+                      : "Check-Out Time"
+                  }
+                  title={
+                    productType === "Automobile"
+                      ? "Return time"
+                      : "Check-Out Time"
+                  }
+                />
+              </div>
+            )}
 
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <CheckComponent
-                        labelColor={{ color: "#4d0552" }}
-                        placeholder={"Onsite tour"}
-                        defaultValue={isOnsiteTour}
-                        required={false}
-                        title="Onsite tour"
-                        display={true}
-                        onChange={handleisOnsiteTour}
-                        showLabel={true}
-                      />
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <CheckComponent
+                  labelColor={{ color: "#121417" }}
+                  placeholder={"Taxable"}
+                  defaultValue={taxable}
+                  required={false}
+                  title="Taxable"
+                  display={true}
+                  onChange={handleTaxable}
+                  showLabel={true}
+                />
+              </div>
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <CheckComponent
+                  labelColor={{ color: "#121417" }}
+                  placeholder={"Virtual tour"}
+                  defaultValue={isVirtualTour}
+                  required={false}
+                  title="Virtual tour"
+                  display={true}
+                  onChange={handleisVirtualTour}
+                  showLabel={true}
+                />
 
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Onsite tour fee"
-                        defaultValue={onsiteTourFee.current}
-                        title="Onsite tour fee"
-                        showLabel={true}
-                        display={isOnsiteTour}
-                        required={true}
-                        min={1}
-                        max={1000000000}
-                        onChange={handleOnsiteTourFee}
-                      />
-                      <TextAreaComponent
-                        defaultValue={onsiteTourDescription.current}
-                        onChange={handleOnsiteTourDescription}
-                        display={isOnsiteTour}
-                        required={true}
-                        placeholder={"Onsite tour description"}
-                        name={"Onsite tour description"}
-                        rows={4}
-                        title="Onsite tour description"
-                      />
-                    </div>
-                  )}
+                <InputComponent
+                  type={"number"}
+                  placeholder="Virtual tour fee"
+                  defaultValue={virtualTourFee.current}
+                  title="Virtual tour fee"
+                  showLabel={true}
+                  display={isVirtualTour}
+                  required={isVirtualTour}
+                  min={1}
+                  max={1000000000}
+                  onChange={handleVirtualTourFee}
+                />
+                <TextAreaComponent
+                  defaultValue={virtualTourDescription.current}
+                  onChange={handleVirtualTourDescription}
+                  display={isVirtualTour}
+                  required={true}
+                  placeholder={"Virtual tour description"}
+                  name={"Virtual tour description"}
+                  rows={4}
+                  title="Virtual tour description"
+                />
+              </div>
+            )}
 
-                  <div className="productPageFormSection2">
-                    <TextAreaComponent
-                      defaultValue={shortDescription.current}
-                      onChange={handleShortDescription}
-                      display={true}
-                      placeholder={"Short description"}
-                      name={"Short description"}
-                      rows={4}
-                      required={true}
-                      title="Short description"
-                    />
-                    <TextAreaComponent
-                      defaultValue={fullDescription.current}
-                      onChange={handleFullDescription}
-                      display={true}
-                      required={true}
-                      placeholder={"Full description"}
-                      name={"Full description"}
-                      rows={4}
-                      title="Full description"
-                    />
-                  </div>
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <CheckComponent
+                  labelColor={{ color: "#121417" }}
+                  placeholder={"Onsite tour"}
+                  defaultValue={isOnsiteTour}
+                  required={false}
+                  title="Onsite tour"
+                  display={true}
+                  onChange={handleisOnsiteTour}
+                  showLabel={true}
+                />
 
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <SelectComponent
-                        name={"Country"}
-                        required={true}
-                        placeholder={"Country"}
-                        options={["Select country", ...countries]}
-                        defaultValue={country}
-                        handleChangeSelect={handleCountry}
-                        display={true}
-                        showLabel={true}
-                        title="Select country"
-                      />
+                <InputComponent
+                  type={"number"}
+                  placeholder="Onsite tour fee"
+                  defaultValue={onsiteTourFee.current}
+                  title="Onsite tour fee"
+                  showLabel={true}
+                  display={isOnsiteTour}
+                  required={true}
+                  min={1}
+                  max={1000000000}
+                  onChange={handleOnsiteTourFee}
+                />
+                <TextAreaComponent
+                  defaultValue={onsiteTourDescription.current}
+                  onChange={handleOnsiteTourDescription}
+                  display={isOnsiteTour}
+                  required={true}
+                  placeholder={"Onsite tour description"}
+                  name={"Onsite tour description"}
+                  rows={4}
+                  title="Onsite tour description"
+                />
+              </div>
+            )}
 
-                      <SelectComponent
-                        name={"City"}
-                        required={true}
-                        placeholder={"City"}
-                        options={["Select city", ...cities]}
-                        defaultValue={city}
-                        handleChangeSelect={handleCity}
-                        display={country ? true : false}
-                        showLabel={true}
-                        title="Select city"
-                      />
+            <div className="productPageFormSection2">
+              <TextAreaComponent
+                defaultValue={shortDescription.current}
+                onChange={handleShortDescription}
+                display={true}
+                placeholder={"Short description"}
+                name={"Short description"}
+                rows={4}
+                required={true}
+                title="Short description"
+              />
+              <TextAreaComponent
+                defaultValue={fullDescription.current}
+                onChange={handleFullDescription}
+                display={true}
+                required={true}
+                placeholder={"Full description"}
+                name={"Full description"}
+                rows={4}
+                title="Full description"
+              />
+            </div>
 
-                      <SelectComponent
-                        name={"Neighborhood"}
-                        options={["Select neighborhood", ...neighborhoods]}
-                        required={true}
-                        placeholder={"Neighborhood"}
-                        defaultValue={neighborhood}
-                        handleChangeSelect={handleNeighborhood}
-                        display={city ? true : false}
-                        showLabel={true}
-                        title="Select neighborhood"
-                      />
-                    </div>
-                  )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <SelectComponent
+                  name={"Country"}
+                  required={true}
+                  placeholder={"Country"}
+                  options={["Select country", ...countries]}
+                  defaultValue={country}
+                  handleChangeSelect={handleCountry}
+                  display={true}
+                  showLabel={true}
+                  title="Select country"
+                />
 
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection3">
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Bedrooms"
-                        defaultValue={bedrooms.current}
-                        title="Bedrooms"
-                        showLabel={true}
-                        display={productType === "Automobile" ? false : true}
-                        required={true}
-                        min={0}
-                        max={10}
-                        onChange={handleBedroom}
-                      />
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Toilets"
-                        defaultValue={toilets.current}
-                        title="Toilets"
-                        showLabel={true}
-                        display={productType === "Automobile" ? false : true}
-                        required={true}
-                        min={0}
-                        max={10}
-                        onChange={handleToilets}
-                      />
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Bathroom"
-                        defaultValue={bathrooms.current}
-                        title="Bathroom"
-                        showLabel={true}
-                        display={productType === "Automobile" ? false : true}
-                        required={true}
-                        min={0}
-                        max={10}
-                        onChange={handleBathroom}
-                      />
-                      <InputComponent
-                        type={"number"}
-                        placeholder="Car parking"
-                        defaultValue={parking.current}
-                        title="Car parking"
-                        showLabel={true}
-                        display={productType === "Automobile" ? false : true}
-                        required={true}
-                        min={0}
-                        max={10}
-                        onChange={handleCarPark}
-                      />
-                    </div>
-                  )}
-                  {/* {!["Interior", "Service", "Product"].includes(productType) &&  <div className="productPageFormSection3 productPageFormSection3Column">
+                <SelectComponent
+                  name={"City"}
+                  required={true}
+                  placeholder={"City"}
+                  options={["Select city", ...cities]}
+                  defaultValue={city}
+                  handleChangeSelect={handleCity}
+                  display={country ? true : false}
+                  showLabel={true}
+                  title="Select city"
+                />
+
+                <SelectComponent
+                  name={"Neighborhood"}
+                  options={["Select neighborhood", ...neighborhoods]}
+                  required={true}
+                  placeholder={"Neighborhood"}
+                  defaultValue={neighborhood}
+                  handleChangeSelect={handleNeighborhood}
+                  display={city ? true : false}
+                  showLabel={true}
+                  title="Select neighborhood"
+                />
+              </div>
+            )}
+
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3">
+                <InputComponent
+                  type={"number"}
+                  placeholder="Bedrooms"
+                  defaultValue={bedrooms.current}
+                  title="Bedrooms"
+                  showLabel={true}
+                  display={productType === "Automobile" ? false : true}
+                  required={true}
+                  min={0}
+                  max={10}
+                  onChange={handleBedroom}
+                />
+                <InputComponent
+                  type={"number"}
+                  placeholder="Toilets"
+                  defaultValue={toilets.current}
+                  title="Toilets"
+                  showLabel={true}
+                  display={productType === "Automobile" ? false : true}
+                  required={true}
+                  min={0}
+                  max={10}
+                  onChange={handleToilets}
+                />
+                <InputComponent
+                  type={"number"}
+                  placeholder="Bathroom"
+                  defaultValue={bathrooms.current}
+                  title="Bathroom"
+                  showLabel={true}
+                  display={productType === "Automobile" ? false : true}
+                  required={true}
+                  min={0}
+                  max={10}
+                  onChange={handleBathroom}
+                />
+                <InputComponent
+                  type={"number"}
+                  placeholder="Car parking"
+                  defaultValue={parking.current}
+                  title="Car parking"
+                  showLabel={true}
+                  display={productType === "Automobile" ? false : true}
+                  required={true}
+                  min={0}
+                  max={10}
+                  onChange={handleCarPark}
+                />
+              </div>
+            )}
+            {/* {!["Interior", "Service", "Product"].includes(productType) &&  <div className="productPageFormSection3 productPageFormSection3Column">
                     <div className="productPageFormSection3Title">
                       Features{" "}
                     </div>
@@ -1092,127 +1067,116 @@ const AddProduct = (props) => {
                     </div>
                   </div>} */}
 
-                  {!["Interior", "Service", "Product", "Automobile"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection6 arrayAndAddContainer">
-                      <div className="arrayAndAddContainerTitle">Features</div>
-                      {propertiesFeaturesTemplate()}
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection3 ">
-                      <TextAreaComponent
-                        defaultValue={otherFeatures.current}
-                        onChange={handleOtherFeatures}
-                        display={true}
-                        required={false}
-                        placeholder={"Other features"}
-                        name={"Other features"}
-                        rows={4}
-                        title="Other features"
-                      />
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection6">
-                      <TextAreaComponent
-                        defaultValue={termsAndConditions.current}
-                        onChange={handleTermsAndConditions}
-                        display={true}
-                        placeholder={"Terms and conditions"}
-                        name={"Terms and conditions"}
-                        rows={4}
-                        required={false}
-                        title="Terms and conditions"
-                      />{" "}
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection6 arrayAndAddContainer">
-                      <div className="arrayAndAddContainerTitle">Policies</div>
-                      <AddObjectToArray
-                        name={"Policies"}
-                        setInitial={setPolicies}
-                        initValue={policies}
-                      />
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(productType) &&
-                    marketingType !== "Rent" && (
-                      <div className="productPageFormSection6 arrayAndAddContainer">
-                        <div className="arrayAndAddContainerTitle">
-                          Available documents
-                        </div>
-                        <ArrayAndAdd
-                          name={"Available documents"}
-                          setInitial={setDocuments}
-                          initValue={documents}
-                        />
-                      </div>
-                    )}
-
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormRecommendations">
-                      <div className="productPageFormRecommendationsTitle">
-                        Recommendations with this product
-                      </div>
-                      <RecommendationTemplate
-                        data={recommendations}
-                        display={true}
-                        isMobile={isMobile}
-                        setData={setRecommendations}
-                        accountId={accountId}
-                        isAdmin={isAdmin}
-                      />
-                      <div
-                        className="productPageFormRecommendationsAdd"
-                        onClick={handleCloseProducts}
-                      >
-                        Add recommended products
-                      </div>
-                    </div>
-                  )}
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && marketingType === "Rent" && (
-                    <div className="productPageFormSection4">
-                      <CalendarSelectComponent {...calendarProps} />
-                    </div>
-                  )}
-
-                  {!["Interior", "Service", "Product"].includes(
-                    productType
-                  ) && (
-                    <div className="productPageFormSection3 priceSection">
-                      <SelectComponent
-                        name={"Product status"}
-                        required={true}
-                        placeholder={"Product status"}
-                        options={["Select product status", "Live", "Draft"]}
-                        defaultValue={live === "Live" ? "Live" : live}
-                        handleChangeSelect={handleLive}
-                        display={true}
-                        showLabel={true}
-                        title="Go live"
-                      />
-                    </div>
-                  )}
-
-                  <button className="productFormBtn">
-                    {product?._id ? "Update product" : "Upload product"}
-                  </button>
-                </form>
+            {!["Interior", "Service", "Product", "Automobile"].includes(
+              productType
+            ) && (
+              <div className="productPageFormSection6 arrayAndAddContainer">
+                <div className="arrayAndAddContainerTitle">Features</div>
+                {propertiesFeaturesTemplate()}
               </div>
-            ) : null}
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3 ">
+                <TextAreaComponent
+                  defaultValue={otherFeatures.current}
+                  onChange={handleOtherFeatures}
+                  display={true}
+                  required={false}
+                  placeholder={"Other features"}
+                  name={"Other features"}
+                  rows={4}
+                  title="Other features"
+                />
+              </div>
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection6">
+                <TextAreaComponent
+                  defaultValue={termsAndConditions.current}
+                  onChange={handleTermsAndConditions}
+                  display={true}
+                  placeholder={"Terms and conditions"}
+                  name={"Terms and conditions"}
+                  rows={4}
+                  required={false}
+                  title="Terms and conditions"
+                />{" "}
+              </div>
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection6 arrayAndAddContainer">
+                <div className="arrayAndAddContainerTitle">Policies</div>
+                <AddObjectToArray
+                  name={"Policies"}
+                  setInitial={setPolicies}
+                  initValue={policies}
+                />
+              </div>
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) &&
+              marketingType !== "Rent" && (
+                <div className="productPageFormSection6 arrayAndAddContainer">
+                  <div className="arrayAndAddContainerTitle">
+                    Available documents
+                  </div>
+                  <ArrayAndAdd
+                    name={"Available documents"}
+                    setInitial={setDocuments}
+                    initValue={documents}
+                  />
+                </div>
+              )}
+
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormRecommendations">
+                <div className="productPageFormRecommendationsTitle">
+                  Recommendations with this product
+                </div>
+                <RecommendationTemplate
+                  data={recommendations}
+                  display={true}
+                  isMobile={isMobile}
+                  setData={setRecommendations}
+                  accountId={accountId}
+                  isAdmin={isAdmin}
+                />
+                <div
+                  className="productPageFormRecommendationsAdd"
+                  onClick={handleCloseProducts}
+                >
+                  Add recommended products
+                </div>
+              </div>
+            )}
+            {!["Interior", "Service", "Product"].includes(productType) &&
+              marketingType === "Rent" && (
+                <div className="productPageFormSection4">
+                  <CalendarSelectComponent {...calendarProps} />
+                </div>
+              )}
+
+            {!["Interior", "Service", "Product"].includes(productType) && (
+              <div className="productPageFormSection3 priceSection">
+                <SelectComponent
+                  name={"Product status"}
+                  required={true}
+                  placeholder={"Product status"}
+                  options={["Select product status", "Live", "Draft"]}
+                  defaultValue={live === "Live" ? "Live" : live}
+                  handleChangeSelect={handleLive}
+                  display={true}
+                  showLabel={true}
+                  title="Go live"
+                />
+              </div>
+            )}
+
+            <button className="productFormBtn">
+              {product?._id ? "Update product" : "Upload product"}
+            </button>
+          </form>
+        </div>
+      ) : null}
       <TheMediaModal {...imageUploadBannerProps} />
       <TheMediaModal {...videoFilesProps} />
 

@@ -1,16 +1,10 @@
 import { Link } from "react-router-dom";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import {
-  IoBed,
-  IoBusiness,
   IoBusinessOutline,
-  IoCar,
-  IoCart,
-  IoSearch,
   IoStorefront,
   IoVideocam,
 } from "react-icons/io5";
-import TheAvatar from "./TheAvatar";
 import useUrlSearchParams from "../utilities-config/useUrlSearchParams";
 import TheSearchSlide from "./TheSearchSlide";
 import TheCartSlider from "./TheCartSlider";
@@ -20,32 +14,19 @@ import { useSelector } from "react-redux";
 const TheHeader = ({
   history,
   accountId,
-  hash,
-  cartCount,
   isMobile,
   locations,
   isNavbarVisible,
   buildingCategories,
   pathname,
   currency,
-  firstName,
   account,
   taxRate,
-  surname,
-  picture,
 }) => {
   const { data: app } = useSelector((state) => state.app);
   const [overlay, setOverlay] = useState(false);
   const [openHeaderDrop, setOpenHeaderDrop] = useState(false);
   const { c, ctype } = useUrlSearchParams();
-
-  // useEffect(()=>{
-  //   let x = localStorage.getItem('user');
-  //   if(![null, undefined].includes(x)){
-  //     setAccount(JSON.parse(x))
-  //   }
-  //   },[])
-  // const { data : user } = useSelector((state) => state.memberProfile);
 
   useEffect(() => {
     let style = document?.body.parentNode.style;
@@ -100,43 +81,21 @@ const TheHeader = ({
     [openCart, history, account, currency, handleCart, taxRate, accountId]
   );
   let categories = [
-    { name: "All", icon: IoVideocam, link: "", display: app?._id },
+    { name: "Home", icon: IoVideocam, link: "", display: app?._id },
+   
     {
-      name: "Shortlet",
-      icon: IoBed,
-      link: "shortlet",
-      display: app?.allowShortlets,
-    },
-    {
-      name: "Property",
+      name: "Properties",
       icon: IoBusinessOutline,
       link: "property",
       display: app?.allowProperties,
     },
     {
-      name: "Product",
+      name: "Other products",
       icon: IoStorefront,
       link: "products",
       display: app?.allowProducts,
     },
-    {
-      name: "Hotel",
-      icon: IoBusiness,
-      link: "hotel",
-      display: app?.allowHotels,
-    },
-    {
-      name: "Interior",
-      icon: IoBed,
-      link: "interior",
-      display: app?.allowInteriors,
-    },
-    {
-      name: "Automobile",
-      icon: IoCar,
-      link: "automobile",
-      display: app?.allowAutomobiles,
-    },
+
   ];
 
   const handleSignIn = useCallback(() => {
@@ -174,7 +133,7 @@ const TheHeader = ({
             <Link to="/" className="leftHeaderMenuLogo">
               Topnotch{" "}
               {c
-                ? c !== "All" && (
+                ? c !== "Home" && (
                     <span className="leftHeaderMenuCategory">{c}</span>
                   )
                 : null}
@@ -191,7 +150,7 @@ const TheHeader = ({
                   (item, i) =>
                     item.display && (
                       <Link
-                        to={item?.name === "All" ? "/" : `/${item?.link}`}
+                        to={item?.name === "Home" ? "/" : `/${item?.link}`}
                         className={
                           c === item.name
                             ? "leftHeaderMenuItemsItem activeMenu"
@@ -207,15 +166,15 @@ const TheHeader = ({
             )}
           </section>
           <div className="rightHeaderMenu">
-            {pathname === "/" && (
+            {/* {pathname === "/" && (
               <div
                 className="headerMenuIcon headerAvatar"
                 onClick={handleSearch}
               >
                 <IoSearch />
               </div>
-            )}
-            {accountId ? (
+            )} */}
+            {/* {accountId ? (
               !isMobile || pathname !== "/" ? (
                 <TheAvatar
                   firstName={firstName}
@@ -225,7 +184,7 @@ const TheHeader = ({
                   click={handleToggleDrop}
                 />
               ) : null
-            ) : null}
+            ) : null} */}
 
             {!accountId && (
               <div onClick={handleSignIn} className="rightHeaderMenuSignOut">
@@ -233,12 +192,12 @@ const TheHeader = ({
               </div>
             )}
 
-            {c === "Product" && (
+            {/* {c === "Product" && (
               <div className="headerMenuIcon" onClick={handleCart}>
                 <IoCart className="headerMenuIconCart" />
                 <span className="headerMenuIconValue">{cartCount}</span>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

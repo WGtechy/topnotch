@@ -1,5 +1,58 @@
+// .homeBanner{
+//     min-height: 25rem;
+//     user-select: none;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: scroll;
+//     background-size: cover;
+//     display: flex;
+//     align-items: end;
+//     position: relative;
+//     border-image: fill 0 linear-gradient(#0000, #000);
+
+//     &Overlay{
+//         background: #0000003b;
+//         height: 100%;
+//         z-index: 1;
+//         width: 100vw;
+//         position: absolute;
+//         top: 3px;
+    
+//     };
+//     img{
+//         height: inherit;
+//         width: inherit;
+//         object-fit: cover;
+//     };
+//     &Container{
+//         display: flex;
+//         justify-content: flex-start;
+//         flex-direction: column;
+//         z-index: 2;
+//         padding: 1rem;
+//         max-width: 700px;
+//         color: #e3e3e3;
+//         &Text{
+//             font-size: 1rem;
+//             font-weight: 700;
+//         };
+//         &BtnContainer{
+//             display: flex;
+//     gap: 1rem;
+//     margin: 0.5rem 0;
+//             &Btn{
+//                 padding: .5rem .8rem;
+//                 cursor: pointer;
+//                 border: 1px solid #e3e3e3;
+//                 border-radius: 10px;
+//             }
+//         }
+//     }
+// }
+
+
 .homeBanner{
-    min-height: 25rem;
+    min-height: 70vh;
     user-select: none;
     background-repeat: no-repeat;
     background-position: center;
@@ -17,21 +70,23 @@
         width: 100vw;
         position: absolute;
         top: 3px;
-    
     };
     img{
         height: inherit;
-        width: inherit;
+        width: 100%;
         object-fit: cover;
     };
     &Container{
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        z-index: 2;
-        padding: 1rem;
-        max-width: 700px;
-        color: #e3e3e3;
+            display: flex
+;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 2;
+    padding: 0 1rem;
+    max-width: 100%;
+    width: 700px;
+    position: absolute;
+    color: #e3e3e3;
         &Text{
             font-size: 1rem;
             font-weight: 700;
@@ -40,7 +95,10 @@
             display: flex;
     gap: 1rem;
     margin: 0.5rem 0;
-            &Btn{
+    overflow-y: hidden;
+    margin-top: 1rem;
+            .btn{
+                margin: 0 !important;
                 padding: .5rem .8rem;
                 cursor: pointer;
                 border: 1px solid #e3e3e3;
@@ -50,4 +108,6 @@
     }
 }
 
-
+.test{
+    display: flex
+}

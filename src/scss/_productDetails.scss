@@ -37,6 +37,7 @@
                 gap: 0.3rem;
                 position: relative;
                 margin: auto 0;
+
                 &Overlay {
                     display: none
                 }
@@ -188,24 +189,29 @@
                     border-radius: 20px;
                 }
             }
-            &Description{
-                &Price{
-                        font-size: 1.5rem;
-    font-weight: 500;
+
+            &Description {
+                &Price {
+                    font-size: 1.5rem;
+                    font-weight: 500;
                 }
-                &Title{
+
+                &Title {
                     font-size: 1.2rem;
                     font-weight: 500;
                 }
-                &About{
+
+                &About {
                     width: 70%;
                     max-width: 100%;
                 }
-                &Btns{
+
+                &Btns {
                     display: flex;
                     gap: 1rem;
                     margin: .5rem 0;
-                    &Item{
+
+                    &Item {
                         border: 1px solid #e3e3e3;
                         border-radius: 1rem;
                         transition: .3s ease-in-out;
@@ -213,7 +219,8 @@
                         font-weight: 500;
                         cursor: pointer;
                     }
-                    &Item:hover{
+
+                    &Item:hover {
                         scale: 1.02;
                         transition: .3s ease-in-out;
                     }
@@ -328,7 +335,7 @@
         &Down {
             height: 3rem;
             width: 3rem;
-            background: #4d0552;
+            background: #121417;
             color: #e3e3e3;
             display: flex;
             align-items: center;
@@ -348,6 +355,33 @@
         }
 
     }
+
+    &Top {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    &Middle {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &Btn {
+        font-size: 2rem;
+        font-weight: 500;
+        background: #121417;
+        color: #e3e3e3;
+        border-radius: 1rem;
+        cursor: pointer;
+        padding: 1rem 2.5rem;
+        transition: .3s ease-in-out;
+    }
+
+    &Btn:hover {
+        scale: 1.02;
+        transition: .3s ease-in-out;
+    }
 }
 
 .hideAllIcons {
@@ -362,24 +396,25 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 750px) {
-    .homeContent{
-        &Screen{
-            &Item{
-                        display: flex
-;
-        flex-direction: column;
-        align-items: center;
+    .homeContent {
+        &Screen {
+            &Item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
     }
-    .homeContentScreenItemDescriptionAbout{
+
+    .homeContentScreenItemDescriptionAbout {
         width: 100%;
         max-width: 100%;
     }
-    
+
 }
+
 @media screen and (max-width: 480px) {
-    
+
     .homeContentBtnTour {
         display: none !important;
     }
@@ -485,7 +520,7 @@
                             }
 
                             .btnTour {
-                                background: #4d0552;
+                                background: #121417;
                                 color: #e3e3e3;
                             }
 
@@ -532,5 +567,5 @@
             display: none;
         }
     }
- 
+
 }

@@ -31,7 +31,7 @@
       }
 
       &Logo {
-        color: #4d0552;
+        color: #121417;
         font-size: 1rem;
       }
 
@@ -64,12 +64,12 @@
 
       &Category {
         position: absolute;
-        color: #4d0552;
+        color: #121417;
         border-radius: 20px;
         bottom: -45px;
         padding: 0.11rem 0.8rem;
         height: 2rem;
-        border: 1px solid #4d0552;
+        border: 1px solid #121417;
         display: none;
         align-items: center;
         justify-content: center;
@@ -114,7 +114,7 @@
       color: #e3e3e3;
 
       &SignOut {
-        color: #4d0552;
+        color: #121417;
         font-weight: 600;
       }
 
@@ -147,7 +147,7 @@
       }
 
       .openSearch {
-        border: 1px solid #4d0552;
+        border: 1px solid #121417;
         transform: scale(1);
         transition: 0.3s ease-in-out;
       }
@@ -683,7 +683,7 @@
   height: 3rem;
   justify-content: center;
   align-items: center;
-  color: #4d0552;
+  color: #121417;
   font-size: 1.5rem;
 
   &Cart {
@@ -1247,3 +1247,10 @@
 }
 
 .stylep {}
+
+@media screen and (min-width: 600px) {
+  .navbarContent .leftHeaderMenuLogo {
+    font-size: 2.5rem;
+    font-weight: 700
+  }
+}

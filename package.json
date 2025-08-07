@@ -1,18 +1,18 @@
 {
-  "name": "prestovia",
+  "name": "topnotch",
   "version": "0.1.0",
-  "homepage": "https://prestovia.com",
+  "homepage": "https://topnotch.com",
   "private": true,
   "author": "Williams Godwin <goddy006@yahoo.com>",
   "license": "MIT",
-  "description": "prestovia webapp",
+  "description": "topnotch webapp",
   "repository": {
-    "url": "https://github.com/WGtechy/prestovia-front",
+    "url": "https://github.com/WGtechy/topnotch.git",
     "type": "git"
   },
   "publish": {
     "provider": "github",
-    "repo": "presitvo360-front"
+    "repo": "topnotch"
   },
   "dependencies": {
     "@paystack/inline-js": "^2.22.1",

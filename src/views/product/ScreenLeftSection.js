@@ -69,7 +69,6 @@ const ScreenLeftSection = ({
 
   const focusElement = useCallback(
     (node) => {
-      // if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver(
         (entries) => {
           let entry = null;
@@ -87,7 +86,6 @@ const ScreenLeftSection = ({
                 entry.target?.pause();
                 mediaFileRef.current = entry.target;
               }
-              // setMediaIsPlaying(false);
             }
             if (entry.isIntersecting) {
               setFileIndexTrackId(entry.target.getAttribute("data"));
@@ -96,7 +94,6 @@ const ScreenLeftSection = ({
         },
         {
           threshold: 0.5,
-          // rootMargin: "100px"
         }
       );
       if (node) observer?.current?.observe(node);
@@ -293,7 +290,6 @@ const ScreenLeftSection = ({
             ) : null}
           </div>
         </div>
-        {/* <div className={showIcons ? "homeContentScreenItemMediaSession" : "homeContentScreenItemMediaSession hideAllIcons" }onClick={playMediaIcon.action} > <playMediaIcon.icon /></div> */}
         <div
           className={
             showIcons
@@ -337,24 +333,6 @@ const ScreenLeftSection = ({
           )}
         </div>
        
-        {/* {videoMimtype.includes(track?.mimetype) && getTime()} */}
-        {/* <div
-          className={
-            showIcons
-              ? "homeContentScreenItemMediaScroll"
-              : "homeContentScreenItemMediaScroll hideAllIcons"
-          }
-        >
-          <div className="homeContentScreenItemMediaScrollUp" onClick={handleBack}>
-            <IoArrowBack />
-          </div>
-          <div
-            className="homeContentScreenItemMediaScrollDown"
-            onClick={handleForward}
-          >
-            <IoArrowForward />
-          </div>
-        </div> */}
       </div>
       <TourSlide {...tourProps} />
     </>

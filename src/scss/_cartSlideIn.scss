@@ -26,7 +26,7 @@
 //             padding: .5rem;
 //             border: 1px solid #e3e3e3;
 //             cursor: pointer;
-//             background: #4d0552;
+//             background: #121417;
 
 //             .cardThree {
 //                 &Image {
@@ -68,52 +68,57 @@
 // }
 
 
-.cart{
+.cart {
     scroll-behavior: smooth;
-    &Card{
-        display: flex
-;
-    gap: 1rem;
-    border-bottom: 1px solid #e3e3e3;
-    padding: .5rem;
-    &Left{
-        width: 6rem;
-        height: 6rem;
-        border-radius: 10px;
-        &Image{
-        border-radius: 10px;
 
+    &Card {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid #e3e3e3;
+        padding: .5rem;
+
+        &Left {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 10px;
+
+            &Image {
+                border-radius: 10px;
+
+            }
         }
-    }
-    &Right{
-        display: flex
-        ;
+
+        &Right {
+            display: flex;
             flex-direction: column;
             gap: 0.5rem;
             width: 75%;
-            &Minimum{
+
+            &Minimum {
                 color: #a73532;
                 font-size: .8rem;
                 font-style: italic;
                 font-weight: 600;
             }
-        &Title{
-            font-size: .9rem;
-            font-weight: 600;
-        }
-        .productInfoCalculationContainer{
-            &Count{
-                &Input{
-                    color: #000
+
+            &Title {
+                font-size: .9rem;
+                font-weight: 600;
+            }
+
+            .productInfoCalculationContainer {
+                &Count {
+                    &Input {
+                        color: #000
+                    }
                 }
             }
         }
     }
-    }
-  
+
 }
 
-.cartDialogFooter{
+.cartDialogFooter {
     position: sticky;
     bottom: 0;
     height: 2.5rem;
@@ -123,30 +128,28 @@
     align-items: center;
     color: #e3e3e3;
     justify-content: center;
-    display: flex
-;
+    display: flex;
     cursor: pointer;
     border-radius: 10px;
 }
 
-.footerItems{
-    display: flex
-    ;
-        width: 100%;
+.footerItems {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+
+    &Icon {
+        cursor: pointer;
+        display: flex;
         align-items: center;
         gap: 1rem;
-        font-size: 1.2rem;
+        color: #e3e3e3;
+        background: #a73532;
+        padding: .2rem 1rem;
         border-radius: 10px;
-        &Icon{
-            cursor: pointer;
-            display: flex
-        ;
-            align-items: center;
-            gap: 1rem;
-            color: #e3e3e3;
-            background: #a73532;
-            padding: .2rem 1rem;
-            border-radius: 10px;
-            font-size: .9rem;
-        }
+        font-size: .9rem;
+    }
 }

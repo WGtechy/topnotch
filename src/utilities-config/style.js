@@ -2,7 +2,7 @@ const iOS =
   typeof navigator !== "undefined" &&
   /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-const background = "#4d0552";
+const background = "#121417";
 const color = "#e3e3e3";
 const arrowStyle = {
   fontSize: "1.4rem",

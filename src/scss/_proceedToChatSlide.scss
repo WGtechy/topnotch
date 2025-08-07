@@ -74,7 +74,7 @@
 
         &Item:hover {
           scale: 1.02;
-          color: #4d0552;
+          color: #121417;
           transition: 0.5s ease-in-out;
         }
 
@@ -116,7 +116,7 @@
               &Amount {
                 &Container {
                   border-radius: 10px;
-                  border: 1px solid #4d0552;
+                  border: 1px solid #121417;
                   padding: 0.5rem;
                 }
               }
@@ -201,7 +201,7 @@
 
         &Payment {
 
-          background: #4d0552;
+          background: #121417;
         }
       }
     }
@@ -298,7 +298,7 @@
 
           &Item:hover {
             scale: 1.02;
-            color: #4d0552;
+            color: #121417;
             transition: 0.5s ease-in-out;
           }
 
@@ -334,7 +334,7 @@
                 &Amount {
                   &Container {
                     border-radius: 10px;
-                    border: 1px solid #4d0552;
+                    border: 1px solid #121417;
                     padding: 0.5rem;
                   }
                 }
@@ -390,7 +390,7 @@
 
                   &Payment {
 
-                    background: #4d0552;
+                    background: #121417;
                   }
                 }
               }
@@ -437,7 +437,7 @@
       //       }
       //       &Payment {
 
-      //           background: #4d0552;
+      //           background: #121417;
       //       }
       //     }
       //   }
@@ -464,7 +464,7 @@
   position: sticky;
   bottom: 0;
   height: 3rem;
-  background: #4d0552;
+  background: #121417;
   padding: 1rem;
   align-items: center;
   display: flex;

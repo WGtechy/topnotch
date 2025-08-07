@@ -30,7 +30,7 @@
 
         &Count {
             position: absolute;
-            background: #4d0552;
+            background: #121417;
             color: #121417;
             width: 25px;
             height: 25px;
@@ -49,7 +49,7 @@
 
         &Title {
             font-size: 1rem;
-            color: #4d0552;
+            color: #121417;
             max-height: 126px;
             overflow: hidden;
             padding: 0 .5rem;
@@ -76,18 +76,19 @@
         &Price {
             padding: 0 .5rem;
 
-                &Value{
-                    // &Symbol{ }
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    padding-right: .3rem;
-                    color: #4d0552;
-                }
-                &Former{
-                    color: #a73532;
-                    text-decoration: line-through;
-                    font-weight: 500;
-                }
+            &Value {
+                // &Symbol{ }
+                font-size: 1.2rem;
+                font-weight: 700;
+                padding-right: .3rem;
+                color: #121417;
+            }
+
+            &Former {
+                color: #a73532;
+                text-decoration: line-through;
+                font-weight: 500;
+            }
 
         }
     }
@@ -97,14 +98,13 @@
         justify-content: space-around;
 
         &Item {
-            display: flex
-            ;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 10px;
-                cursor: pointer;
-                transition: .3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
 
             &Content {
                 display: flex;
@@ -113,7 +113,8 @@
                 font-size: .7rem;
             }
         }
-        &Item:hover{
+
+        &Item:hover {
             scale: 1.2;
             transition: .3s ease-in-out
         }

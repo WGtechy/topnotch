@@ -1,20 +1,22 @@
-.dialog{
-    height: 100vh;
-    width: 100vw;
-    // max-width: 700px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: fixed;
-    right: 0;
-    z-index: 100;
-    top: 0;
+.dialog {
+  height: 100vh;
+  width: 100vw;
+  // max-width: 700px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+
+  .searchContent {
     display: flex;
-    justify-content: space-between;
-    .searchContent{
-      display: flex;
-          flex-direction: column;
-          align-items: center;
-    &Form{
+    flex-direction: column;
+    align-items: center;
+
+    &Form {
       width: 100%;
       // background: rgb(255, 255, 255);
       height: 45px;
@@ -22,139 +24,143 @@
       position: relative;
       display: flex;
       align-items: center;
-  
-        // width: 600px;
-        // background: rgb(255, 255, 255);
-        // height: 45px;
-        // border-radius: 10px;
-        // position: relative;
-        // display: flex;
-        // align-items: center;
-        // /* padding: 0 1rem; */
-        // color: #202124;
-        // max-width: 95vw;
-        // border: 1px solid #140973;
+
+      // width: 600px;
+      // background: rgb(255, 255, 255);
+      // height: 45px;
+      // border-radius: 10px;
+      // position: relative;
+      // display: flex;
+      // align-items: center;
+      // /* padding: 0 1rem; */
+      // color: #202124;
+      // max-width: 95vw;
+      // border: 1px solid #140973;
     }
-    }
-    &Content{
-        // position: sticky;
-        top: 0;
-        right: 0;
-        right: 0;
-        height: inherit;
-        // height: max-content;
-        overflow-x: hidden;
-        min-height: -webkit-fill-available;
-        width: 100%;
+  }
+
+  &Content {
+    // position: sticky;
+    top: 0;
+    right: 0;
+    right: 0;
+    height: inherit;
+    // height: max-content;
+    overflow-x: hidden;
+    min-height: -webkit-fill-available;
+    width: 100%;
     background: #f8f8f8;
     position: relative;
-    }
+  }
 }
 
 
-@media (min-width: 700px){
-.dialogContentReponsive{
+@media (min-width: 700px) {
+  .dialogContentReponsive {
     max-width: 700px !important;
- }
- .dialogEmpty{
+  }
+
+  .dialogEmpty {
     width: inherit;
     height: 100vh;
     position: sticky;
     bottom: 0;
     top: 0;
- }
+  }
 }
 
 .closeDialog {
-    opacity: 0;
-    // transform: translateX(100%);
-    transform: scale(0);
-    transition: .5s;
+  opacity: 0;
+  // transform: translateX(100%);
+  transform: scale(0);
+  transition: .5s;
 }
 
 .openDialog {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 
-    // transform: translateX(0%);
-    transition: .5s;
+  // transform: translateX(0%);
+  transition: .5s;
 }
 
-.appBar{
-    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    z-index: 100;
-    top: 0px;
-    background: #4d0552;
-    left: 0;
-    right: 0px;
-    position: sticky;
-    // background: rgb(32, 33, 36);
-    // color: rgb(227, 227, 227);
-    padding: 0px 5px;
-    box-shadow: 0px 0px 0px !important;
+.appBar {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 100;
+  top: 0px;
+  background: #121417;
+  left: 0;
+  right: 0px;
+  position: sticky;
+  // background: rgb(32, 33, 36);
+  // color: rgb(227, 227, 227);
+  padding: 0px 5px;
+  box-shadow: 0px 0px 0px !important;
 }
 
-.toolbar{
+.toolbar {
   position: relative;
   align-items: center;
   min-height: 56px;
-  display: flex
-;
+  display: flex;
   flex-direction: row;
   padding-left: 0px;
   padding-right: 0px;
   justify-content: space-between;
-  background: #4d0552;
+  background: #121417;
   color: #e3e3e3 !important;
   border-bottom: 1px solid #4e384f;
-    }
+}
 
 
-@media (orientation: landscape){
-.toolbar {
+@media (orientation: landscape) {
+  .toolbar {
     min-height: 48px;
-}}
+  }
+}
 
-@media (min-width: 700px){
-.dialogContentReponsive{
+@media (min-width: 700px) {
+  .dialogContentReponsive {
     max-width: 700px !important;
- }
- .dialogEmpty{
+  }
+
+  .dialogEmpty {
     width: inherit;
     height: 100vh;
     position: sticky;
     bottom: 0;
     top: 0;
- }
+  }
 }
 
-.arrowStyle{
+.arrowStyle {
   font-size: 1.4rem;
   cursor: pointer;
 }
 
 
-@media (min-width: 900px){
-    
-.dialogContentResponsive{
+@media (min-width: 900px) {
+
+  .dialogContentResponsive {
     width: 40vw
-}
-.dialgEmpty{
+  }
+
+  .dialgEmpty {
     width: inherit;
-}
+  }
 }
 
-.headerRightSection{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: .5rem;
-    // display: flex;
+.headerRightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem;
+  // display: flex;
   // flex-direction: row;
   // gap: 4px;
   // height: inherit;
@@ -172,9 +178,11 @@
     align-items: center;
     padding: 0 10px;
     background: #f8f8f8;
-    .loadingIcon{
-        padding: 0
+
+    .loadingIcon {
+      padding: 0
     }
+
     input {
       position: relative;
       z-index: 1;
@@ -195,6 +203,7 @@
       transition-duration: 0.3s;
       border: 1px solid #e3e3e3;
     }
+
     .btn {
       position: absolute;
       right: 0;
@@ -206,6 +215,7 @@
       padding: 0 20px;
     }
   }
+
   .headerRightSectionAvatar {
     display: flex;
     cursor: pointer;
@@ -225,29 +235,31 @@
 }
 
 
-.networkContainer{
+.networkContainer {
   margin: 0 1rem 2rem 1rem;
 }
 
 
-.networkProfileContainer{
+.networkProfileContainer {
   // margin-top: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  &Message{
+
+  &Message {
     width: 90%;
     text-align: center;
   }
-  &Name{
-  }
-  &Group{
+
+  &Name {}
+
+  &Group {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    
+
   }
 }
 
@@ -256,7 +268,7 @@
 
 
 @media (min-width: 480px) {
-    .dialogContentReponsive {
-        box-shadow: 1px 4px 6px #e3e3e3;
-    }
+  .dialogContentReponsive {
+    box-shadow: 1px 4px 6px #e3e3e3;
+  }
 }

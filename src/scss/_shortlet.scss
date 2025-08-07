@@ -10,7 +10,7 @@
         width: 100%;
         height: 3rem;
         border-radius: 10px;
-        border: 1px solid #4d0552;
+        border: 1px solid #121417;
         margin: auto;
         display: flex;
         align-items: center;
@@ -34,7 +34,7 @@
         }
 
         &IconLeft:hover {
-            background: #4d0552;
+            background: #121417;
             color: #e3e3e3;
             scale: 1.03;
             transition: .2s ease-in-out;
@@ -74,7 +74,7 @@
             }
 
             &Icon:hover {
-                background: #4d0552;
+                background: #121417;
                 color: #e3e3e3;
                 scale: 1.03;
                 transition: .2s ease-in-out;

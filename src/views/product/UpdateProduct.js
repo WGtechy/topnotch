@@ -506,7 +506,7 @@
 //             </div>
 //             <div className="productPageFormSection3">
 //               <CheckComponent
-//                 labelColor={{ color: "#4d0552" }}
+//                 labelColor={{ color: "#121417" }}
 //                 placeholder={"Taxable"}
 //                 defaultValue={taxable}
 //                 required={false}
@@ -650,7 +650,7 @@
 //                 {features.map((item, i) => (
 //                   <CheckComponent
 //                     key={i}
-//                     labelColor={{ color: "#4d0552" }}
+//                     labelColor={{ color: "#121417" }}
 //                     placeholder={item.placeholder}
 //                     defaultValue={item.defaultValue}
 //                     required={item.required}

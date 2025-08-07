@@ -13,12 +13,8 @@ const HomeTemplate = ({
   isMobile,
   data,
   c,
-  handleOpenAdd,
   cardDisplayMobile,
-  isAdmin,
-  openAddCat,
   loading,
-  handleNew,
   cardDisplayWide,
 }) => {
     const wideContainerRef = useRef();
@@ -42,7 +38,6 @@ const HomeTemplate = ({
    
   return (
     <>
-      {!!data?.length && (
         <div className="homeContent">
           {isMobile ? (
             <div className="homeContentScreen">
@@ -80,25 +75,9 @@ const HomeTemplate = ({
             </div>
           </div>
         </div>
-      )}
-      {!!data?.length && loading && (
+      { loading && (
         <div style={footerSpace}>{loadingIcon}</div>
       )}
-
-      {data.length === 0 && !loading && (
-        <EmptyDataPage
-          title="oops!!!"
-          message={`No ${c || "content"} at the moment.`}
-          displayBtn={isAdmin && !openAddCat ? true : false}
-          action={handleNew}
-          actionMessage={"Add Product"}
-        />
-      )}
-      {/* {!!data.length && (
-        <div className="addFloatBtn" onClick={handleOpenAdd}>
-          <IoAdd />
-        </div>
-      )} */}
     </>
   );
 };

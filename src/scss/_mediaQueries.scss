@@ -129,7 +129,7 @@
             }
 
             .titleActive {
-                background: #4d0552a8;
+                background: #121417a8;
                 color: #e3e3e3;
                 transition: 0.3s ease-in-out;
             }
@@ -265,18 +265,23 @@
 
 }
 
-@media (display-mode: standalone){
-    .homeContentScreenItemMediaFooter, .homeContentScreenItemMediaDescription{
+@media (display-mode: standalone) {
+
+    .homeContentScreenItemMediaFooter,
+    .homeContentScreenItemMediaDescription {
         bottom: 1rem !important
     }
-    .productInfoCalculation{
+
+    .productInfoCalculation {
         bottom: 0 !important;
     }
+
     .navbarHide {
-    transition: 0.5s;
-    transform: translateY(0%);
+        transition: 0.5s;
+        transform: translateY(0%);
     }
-    .productInfoCalculation{
+
+    .productInfoCalculation {
         bottom: 0 !important
     }
 }

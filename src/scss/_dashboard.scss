@@ -1,134 +1,135 @@
 .dashboard {
-  
 
-        &Earning {
 
-            background: #fff;
-            padding: 10px;
-            border-radius: 10px;
+    &Earning {
 
-            &Header {
-                display: flex;
-                justify-content: space-between;
-                height: 3rem;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
 
-                &Btn {
-                    padding: 0.2rem 1rem;
-                    background: #4d0552;
-                    cursor: pointer;
-                    height: max-content;
-                    color: #e3e3e3;
-                    border-radius: 10px;
-                    transition: .3s ease-in-out;
-                    width: max-content;
-                }
-
-                &Btn:hover {
-                    scale: 1.02;
-                    transition: .3s ease-in-out;
-                }
-
-                &Title {
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                }
-            }
-
-            &Table {
-                &Item {
-                    display: flex;
-                    gap: 1rem;
-                    // justify-content: space-between;
-                    align-items: center;
-
-                    &SN {
-                        width: 4rem;
-                        font-size: 1.2re;
-                    }
-
-                    &Amount {
-                        font-size: 1.2rem;
-                        width: 15rem;
-                    }
-
-                    &Date {
-                        width: 20rem
-                    }
-
-                    &Name {
-                        width: -webkit-fill-available
-                    }
-                }
-            }
-            &Empty{
-                height: 10rem;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
-        &Profile {
-
+        &Header {
             display: flex;
-            flex-direction: column;
-            gap: .5rem;
-            background: #fff;
-            padding: 10px;
-            border-radius: 10px;
+            justify-content: space-between;
+            height: 3rem;
+
+            &Btn {
+                padding: 0.2rem 1rem;
+                background: #121417;
+                cursor: pointer;
+                height: max-content;
+                color: #e3e3e3;
+                border-radius: 10px;
+                transition: .3s ease-in-out;
+                width: max-content;
+            }
+
+            &Btn:hover {
+                scale: 1.02;
+                transition: .3s ease-in-out;
+            }
 
             &Title {
                 font-size: 1.2rem;
                 font-weight: 500;
             }
+        }
 
-            &Avatar {
+        &Table {
+            &Item {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            &Table {
-                display: flex;
-                flex-direction: column;
                 gap: 1rem;
-
-                &Item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-
-            &Settings {
-                display: flex;
+                // justify-content: space-between;
                 align-items: center;
-                justify-content: center;
-                gap: 1rem;
-                margin-top: 1rem;
 
-                &Item {
-                    padding: 0 1rem;
-                    background: #4d0552;
-                    cursor: pointer;
-                    transition: 0.3s ease-in-out;
-                    color: #e3e3e3;
-                    border-radius: 20px;
-                    height: 2rem;
-                    display: flex
-                ;
-                    font-size: .8rem;
-                    align-items: center;
-                    justify-content: center;;
+                &SN {
+                    width: 4rem;
+                    font-size: 1.2re;
                 }
 
-                &Item:hover {
-                    scale: 1.02;
-                    transition: .3s ease-in-out;
+                &Amount {
+                    font-size: 1.2rem;
+                    width: 15rem;
+                }
+
+                &Date {
+                    width: 20rem
+                }
+
+                &Name {
+                    width: -webkit-fill-available
                 }
             }
         }
+
+        &Empty {
+            height: 10rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &Profile {
+
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+
+        &Title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        &Avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &Table {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &Item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        &Settings {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            &Item {
+                padding: 0 1rem;
+                background: #121417;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                color: #e3e3e3;
+                border-radius: 20px;
+                height: 2rem;
+                display: flex;
+                font-size: .8rem;
+                align-items: center;
+                justify-content: center;
+                ;
+            }
+
+            &Item:hover {
+                scale: 1.02;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
 
     &Chart {
         display: flex;
@@ -257,7 +258,7 @@
                 &Right {
                     width: 50%;
                     padding: 10px;
-                    background: #4d0552;
+                    background: #121417;
                     border-radius: 0 20px 0px 0;
                     display: flex;
                     flex-direction: column;
@@ -480,7 +481,7 @@
     gap: 5px;
 
     &More {
-        background: #4d0552;
+        background: #121417;
         color: #e3e3e3;
         margin: 5px auto;
         padding: 5px 20px;
@@ -492,7 +493,7 @@
         display: flex;
         gap: 10px;
         cursor: pointer;
-        border: 1px solid #4d0552;
+        border: 1px solid #121417;
         padding: 10px 0;
         border-radius: 10px;
         padding: 5px;
@@ -616,7 +617,7 @@
             justify-content: center;
 
             &Link {
-                background: #4d0552;
+                background: #121417;
                 color: #e3e3e3;
                 margin: 5px auto;
                 padding: 5px 20px;
