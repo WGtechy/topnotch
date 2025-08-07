@@ -1,0 +1,536 @@
+.homeContent {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    flex-direction: column;
+
+    &Screen {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
+        height: 88vh;
+        margin: auto 0;
+
+        &Item {
+            display: flex;
+            gap: 1rem;
+            height: inherit;
+            margin: 1rem 0;
+            padding: 3rem 1rem 0 1rem;
+            width: 100%;
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+
+            &Span {
+                position: absolute;
+            }
+
+            ;
+
+            &Media {
+                max-width: 400px;
+                height: 80vh;
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+                position: relative;
+                margin: auto 0;
+                &Overlay {
+                    display: none
+                }
+
+                ;
+
+                &Session {
+                    display: flex;
+                    position: absolute;
+                    font-size: 4.2rem;
+                    margin: auto;
+                    width: 100%;
+                    height: 100%;
+                    color: rgba(0, 0, 0, 0.5803921569);
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.2s ease-in-out;
+                    background: #0000001c
+                }
+
+                &Item {
+                    width: 400px;
+                    height: inherit;
+                    display: flex;
+                    flex-direction: row;
+                    overflow-y: hidden;
+                    scroll-snap-type: x mandatory;
+
+                    &Video {
+                        height: 100%;
+                        border-radius: 10px;
+                        width: 100%;
+                        object-fit: cover;
+                        flex: 1 0 100%;
+                        scroll-snap-align: start;
+                        scroll-snap-stop: always;
+                    }
+
+                    &Img {
+                        height: 100%;
+                        border-radius: 10px;
+                        width: 100%;
+                        object-fit: cover;
+                        flex: 1 0 100%;
+                        scroll-snap-align: start;
+                        scroll-snap-stop: always;
+                    }
+
+                    &Description {
+                        display: none
+                    }
+                }
+
+                &Footer {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .9rem;
+                    margin: .5rem;
+                    // font-size: 1.5rem;
+                    color: #e3e3e3;
+                    padding: .5rem;
+                    transition: .2s ease-in-out;
+
+                    &Icon {
+                        background: rgba(0, 0, 0, 0.5803921569);
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        justify-content: center;
+                        position: relative;
+
+                        &Value {
+                            position: absolute;
+                            font-size: .7rem;
+                            top: -6px;
+                            font-weight: 800;
+                            color: #e3e3e3;
+                        }
+                    }
+
+                    &Icon:hover {
+                        background: #121417;
+                        transition: .5s ease-in-out;
+
+                    }
+
+                    &Icon[content]:hover::after {
+                        content: attr(content);
+                        position: absolute;
+                        font-weight: 800;
+                        font-size: .7rem;
+                        border-radius: 20px;
+                        padding: .1rem .3rem;
+                        top: 1.8rem;
+                        transition: .5s ease-in-out;
+                        color: #00000094
+                    }
+                }
+
+                ;
+
+                &Scroll {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.5rem;
+                    position: absolute;
+                    bottom: 25px;
+                    left: 5px;
+                    transition: .2s ease-in-out;
+
+                    &Up,
+                    &Down {
+                        height: 2.5rem;
+                        color: #e3e3e3;
+                        width: 2.5rem;
+                        background: #00000094;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+                        user-select: none;
+                    }
+
+                    &Up:hover,
+                    &Down:hover {
+                        scale: 1.02;
+                        background: #121417;
+                        color: #e3e3e3;
+                        transition: .5s ease-in-out;
+                    }
+
+                }
+
+                &Time {
+                    position: absolute;
+                    right: 1rem;
+                    top: 10px;
+                    background: #00000094;
+                    color: #e3e3e3;
+                    padding: .1rem .4rem;
+                    border-radius: 20px;
+                }
+            }
+            &Description{
+                &Price{
+                        font-size: 1.5rem;
+    font-weight: 500;
+                }
+                &Title{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+                &About{
+                    width: 70%;
+                    max-width: 100%;
+                }
+                &Btns{
+                    display: flex;
+                    gap: 1rem;
+                    margin: .5rem 0;
+                    &Item{
+                        border: 1px solid #e3e3e3;
+                        border-radius: 1rem;
+                        transition: .3s ease-in-out;
+                        padding: .5rem 1rem;
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                    &Item:hover{
+                        scale: 1.02;
+                        transition: .3s ease-in-out;
+                    }
+                }
+            }
+
+            &Details {
+                display: flex;
+                gap: 0.5rem;
+                width: -webkit-fill-available;
+                flex-direction: column;
+                transition: .9s ease-in-out;
+
+                &Header {
+                    width: max-content;
+                    display: flex;
+                    gap: 0.5rem;
+                    transition: .5s ease-in-out;
+
+                    border-radius: 20px;
+                    align-items: center;
+
+                    &Back {
+                        display: flex;
+                        align-items: center;
+
+                    }
+
+                    &Back:hover {
+                        scale: 1.5rem
+                    }
+                }
+
+                &Header:hover {
+                    scale: 1.05;
+                    transition: 0.5sease-in-out;
+                }
+
+                &About {
+                    overflow-x: hidden;
+                    height: 84vh;
+                    scroll-behavior: smooth;
+
+                    // max-width: 600px;
+                    &ProductDescription {
+                        margin: 1rem 0
+                    }
+
+                    &Description {
+                        margin-bottom: 1rem;
+                    }
+
+                    .reduceDescription {
+                        line-height: 20px;
+                        max-height: 126px;
+                        overflow: hidden;
+                        position: relative;
+                        margin: 2rem 0;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+
+                &Auth {
+                    overflow-x: hidden;
+                }
+
+                .commentArea {
+                    margin: 0px 0.5rem;
+                    border-radius: 10px;
+                    position: sticky;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+
+                    &Form {
+                        display: flex;
+                        gap: 0.5rem;
+                        background: #fff;
+                        border-radius: 10px;
+                        height: 3rem;
+                        width: 500px;
+                        max-width: 100vw;
+
+                        &Input {
+                            outline: none;
+                            border: none;
+                            width: 100%;
+                            height: 2rem;
+                            padding: 0 0.5rem;
+                            margin: auto;
+                        }
+
+                        .sendReply {
+                            background: #fff;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    &Scroll {
+        display: flex;
+        gap: .5rem;
+
+        &Up,
+        &Down {
+            height: 3rem;
+            width: 3rem;
+            background: #4d0552;
+            color: #e3e3e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            user-select: none;
+        }
+
+        &Up:hover,
+        &Down:hover {
+            scale: 1.02;
+            background: #121417;
+            color: #e3e3e3;
+            transition: .5s ease-in-out;
+        }
+
+    }
+}
+
+.hideAllIcons {
+    transition: .2s ease-in-out;
+    transform: scale(0)
+}
+
+.selectedProductIcon {
+    color: #a73532;
+    transition: .3s ease-in-out;
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 750px) {
+    .homeContent{
+        &Screen{
+            &Item{
+                        display: flex
+;
+        flex-direction: column;
+        align-items: center;
+            }
+        }
+    }
+    .homeContentScreenItemDescriptionAbout{
+        width: 100%;
+        max-width: 100%;
+    }
+    
+}
+@media screen and (max-width: 480px) {
+    
+    .homeContentBtnTour {
+        display: none !important;
+    }
+
+    .homeContent {
+        margin: 0;
+
+        &Screen {
+            height: 95vh;
+
+            &Item {
+                margin: 0;
+                padding: 0;
+                // height: inherit;
+
+                &Details {
+                    transform: scale(0);
+                    // width: 1px;
+                    display: none;
+                }
+
+                &Media {
+
+                    max-width: -webkit-fill-available;
+                    margin: 0;
+                    height: inherit;
+
+                    &Item {
+                        width: 100vw;
+                        max-width: 100%;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        height: inherit;
+
+                        &Video {
+                            border-radius: 0;
+                        }
+
+                        &Overlay {
+                            background: #0000003b;
+                            position: absolute;
+                            display: block;
+                            height: 100%;
+                            width: 100vw;
+                            z-index: 1;
+                        }
+                    }
+
+                    &Description {
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        bottom: 3.5rem;
+                        color: #ffffff;
+                        z-index: 2;
+                        bottom: 5rem;
+                        width: 85%;
+                        padding: 0.5rem;
+                        max-height: 15rem;
+                        overflow-x: hidden;
+                        background: #29292954;
+                        margin: 0 .3rem;
+                        border-radius: 15px;
+
+                        &Price {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            user-select: none;
+                            background: #1214175a;
+                            padding: .1rem .5rem;
+                            border-radius: 20px;
+                            width: max-content;
+                        }
+
+                        &Title {
+                            font-size: 1.1rem;
+                            font-weight: 400;
+                        }
+
+                        &Btns {
+                            display: flex;
+                            gap: .5rem;
+
+                            position: sticky;
+                            bottom: 0;
+
+                            &Item {
+                                padding: 0.5rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 10px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                width: -webkit-fill-available;
+                                font-size: .7rem;
+                            }
+
+                            .btnBooking {
+                                background: #e3e3e3;
+                                color: #121417;
+                            }
+
+                            .btnTour {
+                                background: #4d0552;
+                                color: #e3e3e3;
+                            }
+
+                        }
+                    }
+
+                    &Footer {
+                        z-index: 2;
+                        padding: 0;
+                        bottom: 5rem;
+
+                        &Icon {
+                            background: inherit;
+                            font-size: 1.7rem;
+                            cursor: pointer;
+                            justify-content: center;
+                            position: relative
+                        }
+
+                        &Icon:hover {
+                            background: none;
+                            scale: 1.02;
+                            transition: .5s ease-in-out;
+
+                        }
+
+                        &Icon[content]:hover::after {
+                            color: #e3e3e3
+                        }
+                    }
+
+                    &Time {
+                        display: none
+                    }
+
+                    &Scroll {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &Scroll {
+            display: none;
+        }
+    }
+ 
+}

@@ -1,0 +1,132 @@
+@media screen and (max-width: 780px) {
+    .cardOne {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-width: 90vw;
+    }
+}
+
+.cardOne {
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #e3e3e3;
+    color: #121417;
+    position: relative;
+    width: 100%;
+
+    &Image {
+        position: relative;
+        height: 20rem;
+        width: 100%;
+        scroll-snap-type: x mandatory;
+        overflow: auto;
+        display: flex;
+
+        &Item {
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        &Count {
+            position: absolute;
+            background: #4d0552;
+            color: #121417;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            top: 5px;
+            right: 5px;
+            box-shadow: 1px 1px 3px #e3e3e3;
+            font-size: .8rem;
+        }
+    }
+
+    &Content {
+
+        &Title {
+            font-size: 1rem;
+            color: #4d0552;
+            max-height: 126px;
+            overflow: hidden;
+            padding: 0 .5rem;
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            font-weight: 500;
+        }
+
+        &Description {
+            padding: 0 .5rem;
+
+        }
+
+        &Location {
+            display: flex;
+            align-items: center;
+            padding: 0 .5rem;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        &Price {
+            padding: 0 .5rem;
+
+                &Value{
+                    // &Symbol{ }
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    padding-right: .3rem;
+                    color: #4d0552;
+                }
+                &Former{
+                    color: #a73532;
+                    text-decoration: line-through;
+                    font-weight: 500;
+                }
+
+        }
+    }
+
+    &Footer {
+        display: flex;
+        justify-content: space-around;
+
+        &Item {
+            display: flex
+            ;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+
+            &Content {
+                display: flex;
+                gap: 5px;
+                justify-content: space-around;
+                font-size: .7rem;
+            }
+        }
+        &Item:hover{
+            scale: 1.2;
+            transition: .3s ease-in-out
+        }
+
+        .share {
+            color: #a73532;
+            cursor: pointer;
+        }
+    }
+}
+
+.cardOne:hover {
+    box-shadow: 1px 1px 6px #e3e3;
+    scale: 0.98;
+
+}

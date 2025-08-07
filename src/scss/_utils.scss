@@ -1,0 +1,163 @@
+
+.cardDescriptionContainer {
+  max-width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  box-shadow: 1px 1px 6px #3c4b64;
+  background: #fff;
+  color: #3c4b64;
+  margin: auto;
+  position: relative;
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #3c4b64;
+    color: #e3e3e3;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    &Right {
+      font-size: 0.7rem;
+      font-weight: 600px;
+    }
+  }
+  &Body {
+    padding: 5px;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    &Child {
+      background: #e3e3e3;
+      border-radius: 5px;
+      &Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        color: #2e3452;
+        gap: 2px;
+        font-size: 0.81rem;
+        font-weight: 800;
+        align-items: baseline;
+        .edit{
+          width: 50px;
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+        }
+      }
+      &Left {
+        font-size: 0.7rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6rem;
+      }
+      &Right {
+        font-size: 0.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6rem;
+      }
+      &Body {
+        white-space: pre-wrap;
+        padding: 1px 5px;
+        font-size: 0.9rem;
+        text-align: end;
+    
+      }
+      &Items{
+        &Values{
+          display: flex;
+    gap: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+    &Trash{
+      display: flex;
+      color: #e55353;
+    }
+    &Add, &Item{
+      color: #fff;
+      border-radius: 10px;
+      padding: 5px 15px;
+      font-size: .7rem;
+      display: flex;
+      gap: 10px;
+      height: 1.8rem;
+      align-items: center;
+      cursor: pointer;
+    }
+    &Add{
+        background: #069034;
+
+      }
+      &Item{
+        background: #121417;
+
+      }
+        }
+        &InputBox{
+          display: flex;
+          gap: 10px;
+          height: 3rem;
+          padding: 10px;
+          &Text{
+            border: none;
+    border-radius: 10px;
+    padding: 5px;
+          }
+          &Control{
+            display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    &Add, &Close{
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: .7rem;
+    display: flex;
+    gap: 10px;
+    height: 1.3rem;
+    align-items: center;
+    cursor: pointer;
+    }
+    &Add{
+      background: #069034;
+    }
+    &Close{
+      background: #e55353
+
+    }
+          }
+        }
+      }
+    }
+  }
+  &Left {
+    padding: 5px;
+  }
+  &Right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+
+    &Body {
+      padding: 5px;
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+
+
+.productPageFeatures {
+    margin: 1rem;
+
+    &Wrapper {
+      position: relative;
+      &List {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        &Item {
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #16181b;
+          color: #e3e3e3;
+          padding: .2rem 1rem;
+          gap: 1.5rem;
+          &Icon{
+            padding: 0 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: .2rem;
+            font-weight: 700;
+            &Img{
+              font-size: 1.5rem;
+              align-items: center;
+              display: flex;
+            }
+          }
+          &Content{
+            font-size: 1rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: -webkit-fill-available;
+          }
+          }
+      }
+     
+    }
+     
+
+  }
+
+
+
+
+  @media only screen and (max-width: 650px) {
+
+   
+    .productPageFeatures{
+      &Wrapper{
+    &List {
+      grid-auto-columns: 200px;
+      // animation: slide 5s linear infinite;
+      }
+    }
+}
+}
+
+
+
+@keyframes slide {
+  to{
+    translate: calc(-4 * 115px)
+  }
+}

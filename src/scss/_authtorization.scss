@@ -1,0 +1,281 @@
+.authentication {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+    transition: 0.9s ease-in-out;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    // &Left {
+    //     background: #fff;
+    //     border-radius: 10px;
+    //     box-shadow: 1px 1px 6px #c4c4c4;
+    //     height: 100%;
+    //     padding: 15px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     max-width: 500px;
+
+    //     &Text {
+    //         padding: 1rem 0;
+    //     }
+
+    //     ;
+
+    //     &Product {
+    //         &Picture {
+    //             height: 50vh;
+
+    //             &Image {
+    //                 border-radius: 5px;
+    //             }
+    //         }
+
+    //         &Content {
+    //             &Title {
+    //                 font-size: 1.1rem;
+    //                 font-weight: 700;
+    //                 padding: 1rem 0 0.5rem 0;
+    //             }
+
+    //             &Description {
+    //                 line-height: 21px;
+    //                 max-height: 126px;
+    //                 overflow: hidden;
+    //                 position: relative;
+    //                 font-size: 0.8rem;
+    //                 display: -webkit-box;
+    //                 -webkit-line-clamp: 2;
+    //                 -webkit-box-orient: vertical;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // ;
+
+    &Right {
+        position: relative;
+        padding: 2rem;
+        background: #fff;
+        box-shadow: 1px 1px 6px #c4c4c4;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        width: 500px;
+        text-align: center;
+        max-width: 95vw;
+
+        .title {}
+
+        &Form {
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            &Btn {
+                background: #4d0552;
+                padding: 0 1rem;
+                border-radius: 20px;
+                color: #e3e3e3;
+                cursor: pointer;
+                margin: 1rem 0;
+                height: 2.5rem;
+                width: -webkit-fill-available;
+            }
+            &Auth{
+                border: 1px solid #4d0552;
+    padding: 0 1rem;
+    border-radius: 20px;
+    color: #4d0552;
+    cursor: pointer;
+    margin: 0 0 .3rem 0;
+    height: 2.5rem;
+    width: -webkit-fill-available;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+            }
+
+            &Forgot {
+                color: #a73532;
+                font-size: .8rem;
+                cursor: pointer;
+            }
+
+            &New {
+                border: 1px solid #4d0552;
+    padding: 0 1rem;
+    border-radius: 20px;
+    color: #4d0552;
+    cursor: pointer;
+    margin: 0 0 .3rem 0;
+    height: 2.5rem;
+    width: -webkit-fill-available;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+                // text-decoration: underline;
+                // font-size: .8rem;
+                // font-style: italic;
+                // cursor: pointer;
+            }
+        }
+
+        &Form> :is(input, button) {
+            width: 100%;
+            height: 56px;
+            border-radius: 6px;
+            border: 0;
+        }
+    }
+}
+
+// @media screen and (min-width: 781px) {
+//     .authentication{
+//         margin: 1rem auto;
+//         width: 85vw;
+//         justify-content: center;
+//         &Right{
+//             max-width: 500px;
+//             min-width: auto;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             &Header{
+//                 display: flex;
+//                 align-items: center;
+//                 width: 100%;
+//                 justify-content: center;
+//                 gap: 10px;
+//                 &Btn{
+//                     padding: 5px 15px;
+//                     border: 1px solid #4d0552;
+//                     border-radius: 10px;
+//                     cursor: pointer;   
+//                     transition: .5s ease-in-out;
+
+//                 }
+//                 &Btn:hover{
+//                     scale: 1.02
+//                 }
+//                 .authActive{
+//                     background: #4d0552;
+//                     color: #e3e3e3;
+//                     transition: .5s ease-in-out;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 780px) {
+//     .authentication{
+
+//     &Left{
+//         &Image{
+//            display: none
+//         }
+//     }
+//         &Right{
+//             &Header{
+//                 display: flex;
+//                 align-items: center;
+//                 width: 100%;
+//                 justify-content: center;
+//                 gap: 10px;
+//                 &Btn{
+//                     padding: 5px 15px;
+//                     border: 1px solid #4d0552;
+//                     border-radius: 10px;
+//                     cursor: pointer;   
+//                     transition: .5s ease-in-out;
+
+//                 }
+//                 &Btn:hover{
+//                     scale: 1.02
+//                 }
+//                 .authActive{
+//                     background: #4d0552;
+//                     color: #e3e3e3;
+//                     transition: .5s ease-in-out;
+//                 }
+//             }
+//         }
+//     }
+// }
+.otpCard {
+    text-align: center;
+    border-radius: 10px;
+    padding: 3rem;
+
+    &Title {
+        font-size: 2rem;
+    }
+
+    &Error {
+        font-size: .9rem;
+        cursor: pointer;
+
+        &Resend {
+            text-decoration: underline;
+        }
+    }
+
+    &Disable {
+        display: none;
+    }
+
+    ;
+
+    &Inputs {
+        margin: 30px 0;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+
+        &Input {
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+            border-radius: 10px;
+            border: 1px solid #9d9d9d;
+
+            &Input:focus {
+                outline: 2px solid blueviolet;
+                border-color: transparent;
+            }
+        }
+    }
+
+    &Btn {
+        background: #1e0cb8;
+        border: none;
+        padding: 15px 50px;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    &Btn:hover {
+        opacity: .9;
+    }
+
+    &Btn[disabled] {
+        opacity: .6;
+        cursor: default;
+    }
+}
+
+.dialogContent {
+    .authentication {}
+}

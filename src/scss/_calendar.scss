@@ -1,0 +1,142 @@
+.wrapper {
+  margin: 0.5rem;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #fff;
+  height: 26rem;
+
+  &Title {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+    font-weight: 700;
+  }
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .icons {
+  display: flex;
+  margin: 0 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header .icons span {
+  height: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.icons span:last-child {
+  margin-right: -10px;
+}
+
+header .icons span:hover {
+  background: #f2f2f2;
+}
+
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+
+.calendar li:hover {
+  color: #e3e3e3
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days li.inactive {
+  color: #aaa;
+  cursor: none;
+}
+
+.days li.active {
+  color: #fff;
+  background: #333;
+  transition: .5s ease-in-out;
+}
+
+.days li::before {
+  // position: absolute;
+  // content: "";
+  // left: 50%;
+  // top: 50%;
+  // height: 40px;
+  // width: 40px;
+  // z-index: -1;
+  // border-radius: 50%;
+  // transform: translate(-50%, -50%);
+
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+  // background: #a73532;
+}
+
+.days li.activeUser::before {
+  background: #4d0552;
+}
+
+.days li:not(.inactive):hover::before {
+  background: #333;
+  color: #e3e3e3
+}

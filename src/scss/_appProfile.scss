@@ -1,0 +1,225 @@
+// .appProfileCard{
+//   width: -webkit-fill-available;
+//   max-width: max-content !important;
+//   margin: 0px 5px 20px 5px;
+//   page-break-inside: avoid;
+//   break-inside: avoid;
+//   float: left;
+//   border: 1px solid #fff;
+//   box-shadow: 1px 1px 4px #fff;
+//   padding: 1rem;
+//   border-radius: 20px;
+//   }
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: 0 auto 5rem auto;
+
+  &Profile {
+    border-radius: 10px;
+    width: -webkit-fill-available;
+    margin: 0px 5px 20px 5px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    float: left;
+    box-shadow: 1px 0px 4px #fff;
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    &Heading{
+      display: flex
+      ;
+          align-items: center;
+          justify-content: space-between;
+          
+              &Title {
+                font-weight: 500;
+                font-size: 1.2rem;
+                padding: .5rem 0;
+                user-select: none;
+              }
+              &Switch{
+
+              }
+
+    }
+
+    &Card {
+      &Form {
+        &Input {
+
+          width: -webkit-fill-available
+        }
+      }
+
+      &Header {
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: .5rem 0;
+        user-select: none;
+      }
+
+      &Items {
+        align-items: center;
+        padding: 0.8rem;
+        border-radius: 10px;
+        margin: 0.2rem;
+
+        &Values {
+          font-size: 0.8rem;
+          text-align: left;
+          font-weight: normal;
+          display: flex;
+          gap: .5rem;
+          flex-wrap: wrap;
+          margin: .3rem;
+          &Add {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: #4d0552;
+            color: #e3e3e3;
+            cursor: pointer;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &Add:hover {
+            background: #141212
+          }
+
+          &Item {
+               padding: 0.5rem 1rem;
+    background: #4d0552;
+    color: #e3e3e3;
+    display: flex
+;
+    border-radius: 20px;
+    align-items: center;
+    gap: 1rem;
+            &Content{
+              &Name{
+                font-size: 1.2rem;
+              }
+              &Description{
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                font-size: .8rem;
+                font-weight: 400;
+                line-height: 21px;
+                overflow: hidden;
+                padding: 5px;
+                position: relative;
+                white-space: pre-wrap;
+              }
+            }
+
+            &Trash {
+                cursor: pointer;
+    margin: auto;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+            }
+
+            &Trash:hover {
+              scale: 1.03
+            }
+          }
+        }
+
+        &InputBox {
+          display: flex;
+          max-width: 80vw;
+          width: 18rem;
+          border: 1px solid #4d0552;
+          padding: .5rem;
+          border-radius: 20px;
+
+          &Text {
+            border: none;
+            outline: none;
+            width: 100%;
+          }
+
+          &Control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &Add {
+              width: 3rem;
+              background: green;
+              color: #e3e3e3;
+              font-size: .8rem;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+              border-radius: 20px;
+              margin: 0 5px;
+              padding: .1rem .5rem;
+              cursor: pointer;
+            }
+          }
+        }
+
+        &Object {
+          &Control {
+            display: flex;
+            justify-content: space-around;
+
+            &Add,
+            &Close {
+              background: #212422;
+              color: #e3e3e3;
+              width: 5rem;
+              height: 2.5rem;
+              border-radius: 20px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      &Save {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem 1rem;
+        background: #4d0552;
+        width: min-content;
+        margin: auto;
+        border-radius: 10px;
+        color: #e3e3e3;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.updateAppBtn {
+  position: sticky;
+  /* bottom: 0px; */
+  /* right: 10px; */
+  padding: 0.5rem 1rem;
+  background: #4d0552;
+  color: #e3e3e3;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 800;
+  width: max-content;
+  margin: 2rem auto;
+}
+
+.updateAppBtn:hover {
+  background: #000;
+}

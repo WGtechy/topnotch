@@ -1,0 +1,147 @@
+.location {
+    &Data {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &Item {
+            border: 1px solid #4d0552;
+            border-radius: 10px;
+            padding: 10px;
+
+            &Container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &Header {
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: .5rem 0;
+
+                    &Name {
+                        font-weight: 700;
+                    }
+
+                    &Icon {
+                        cursor: pointer;
+                        color: #a73532;
+                    }
+                }
+
+                &Container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    &Item {
+                        border: 1px solid #4d0552;
+                        border-radius: 10px;
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        &Header {
+                            font-weight: 700;
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 0.5rem 0;
+                            font-size: .8rem;
+
+                            &Name {
+                                font-weight: 700;
+                            }
+
+                            &Icon {
+                                color: #a73532;
+                                cursor: pointer;
+
+                            }
+                        }
+
+                        &Container {
+                            display: flex;
+                            gap: .4rem;
+                            width: 100%;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+
+                            &Item {
+                                border: 1px solid #4d0552;
+                                border-radius: 20px;
+                                padding: .3rem .8rem;
+                                display: flex;
+                                flex-direction: row;
+                                gap: 1rem;
+                                width: max-content;
+
+                                &Name {
+                                    font-size: .8rem;
+                                }
+
+                                &Icon {
+                                    color: #a73532;
+                                    cursor: pointer;
+
+                                }
+                            }
+
+                            &New {
+                                padding: 0.5rem 1rem;
+                                border-radius: 20px;
+                                background: #4d0552;
+                                color: #e3e3e3;
+                                cursor: pointer;
+                                width: max-content;
+                                
+                            }
+                        }
+                    }
+
+                    &New {
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        background: #4d0552;
+                        color: #e3e3e3;
+                        cursor: pointer;
+                        width: max-content;
+                    }
+                }
+            }
+        }
+
+        ;
+
+        &New {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: #4d0552;
+            color: #e3e3e3;
+            cursor: pointer;
+            width: max-content;
+            font-size: .8rem;
+        }
+
+        &New:hover {
+            background: #141212;
+        }
+
+        &Form {
+            &Submit {
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                background: #4d0552;
+                color: #e3e3e3;
+                cursor: pointer;
+                width: max-content;
+            }
+
+            &Submit:hover {
+                background: #141212;
+            }
+        }
+    }
+}

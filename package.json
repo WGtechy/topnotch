@@ -1,0 +1,76 @@
+{
+  "name": "prestovia",
+  "version": "0.1.0",
+  "homepage": "https://prestovia.com",
+  "private": true,
+  "author": "Williams Godwin <goddy006@yahoo.com>",
+  "license": "MIT",
+  "description": "prestovia webapp",
+  "repository": {
+    "url": "https://github.com/WGtechy/prestovia-front",
+    "type": "git"
+  },
+  "publish": {
+    "provider": "github",
+    "repo": "presitvo360-front"
+  },
+  "dependencies": {
+    "@paystack/inline-js": "^2.22.1",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6",
+    "core-js": "^3.9.1",
+    "dayjs": "^1.11.11",
+    "downloadjs": "^1.4.7",
+    "enzyme": "^3.11.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "moment": "^2.30.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^2.0.5",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^8.1.0",
+    "recharts": "^2.8.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.32.8",
+    "style-components": "^0.1.0",
+    "swiper": "^11.1.4",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1"
+  }
+}

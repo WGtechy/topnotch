@@ -1,0 +1,21 @@
+
+.filesContainer{
+    .fileItem{
+        min-height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .deleteFile{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.mediaFilesContainer{
+    padding: 0 1rem;
+}

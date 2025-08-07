@@ -1,0 +1,43 @@
+.dropdownSelect{
+    position: absolute;
+    top: 2rem;
+    background: #fff;
+    right: 0;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #e3e3e3;
+    width: 6rem;
+    color: #000;
+    &Item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.3rem;
+      cursor: pointer;
+      text-align: center;
+      width: -webkit-fill-available;
+      margin: 0.5rem;
+    }
+    &Item:hover{
+      scale: 1.05;
+      font-weight: 600;
+    }
+  }
+
+  .dropDisplayFlex{
+    width: max-content;
+  }
+
+  .openDropFlex{
+    display: flex;
+    gap: .5rem;
+    transition: .5s ease-in-out;
+  }
+  .openDrop{
+    display: block;
+    transition: .5s ease-in-out;
+  }
+  .closeDrop{
+    transition: .5s ease-in-out;
+    display: none;
+  }

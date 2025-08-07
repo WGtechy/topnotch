@@ -1,0 +1,198 @@
+.contactForm {
+  padding: 0.5rem;
+  background: #121417;
+  color: #e3e3e3;
+  padding-bottom: 2rem;
+
+  &Description {
+    overflow: hidden;
+    position: relative;
+    font-size: 1.2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    padding: 1rem;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  &Content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+
+    &Info {
+      max-width: 30rem;
+      flex: 1 0 140px;
+      position: relative;
+
+      &Address {
+        line-height: 21px;
+        overflow: hidden;
+        position: relative;
+        font-size: 0.8rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        padding: 1rem 0;
+      }
+
+      &Social {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 20rem;
+
+        &Item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: #e3e3e3;
+        }
+      }
+    }
+  }
+
+  &Container {
+    max-width: 30rem;
+    flex: 1 0 140px;
+    position: relative;
+
+  }
+}
+
+.formLayout {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: #4d0552;
+  }
+
+  &Input {
+    background: #eee;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+  }
+
+  &TextArea {
+    border: none;
+    border-radius: 10px;
+    background: #eee;
+    padding: 12px 15px;
+    margin: 8px 0;
+    resize: none;
+    outline: none;
+  }
+
+  &Select {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 0 1rem;
+    border: none;
+    outline: none;
+  }
+}
+
+.formCheckbox {
+  display: flex
+  ;
+      justify-content: space-between;
+      background: #eee;
+      margin: 0.2rem 0;
+      padding: 12px 15px;
+      border-radius: 10px;
+      align-items: center;
+      height: 2.5rem;
+      gap: 4rem;
+      width: 100%;
+      cursor: pointer;
+  label{
+    font-size: .8rem;
+  }
+
+  input:checked~.checkmark {
+    background-color: #000;
+  }
+
+  &Input {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.checkboxesContainer {
+  flex-wrap: wrap;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.formCheckbox input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.formCheckbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.formCheckbox:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+// style={{flex: "1 0 140px"}}
+
+
+@media screen and (max-width: 780px) {
+  .contactFormContainer {
+    width: 90vw;
+  }
+
+  .contactFormContent {
+    flex-direction: column
+  }
+}
+
+.dateInput{
+  outline: none;
+  border: 0;
+  width: 100%;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+  // ::-webkit-datetime-edit{padding: 1rem}
+// ::-webkit-datetime-edit-fields-wrapper{background: yellow}
+// ::-webkit-datetime-edit-text{color: red; padding: .5rem}
+
+// ::-webkit-datetime-edit-year-field{color: rgb(40, 33, 180)}
+// ::-webkit-datetime-edit-month-field{color: rgb(160, 48, 188)}
+// ::-webkit-datetime-edit-week-field{color: purple}
+// ::-webkit-datetime-edit-day-field{color: orangered}
+// ::-webkit-datetime-edit-hour-field{color: rgb(185, 73, 28)}
+// ::-webkit-datetime-edit-minute-field{color: lime}
+// ::-webkit-datetime-edit-second-field{color: rgb(7, 132, 69)}
+// ::-webkit-datetime-edit-millisecond-field{color:#121417}
+// // ::-webkit-datetime-edit-ampm-field
+
+// // ::-webkit-inner-spin-button
+// ::-webkit-calendar-picker-indicator{color:#4d0552}

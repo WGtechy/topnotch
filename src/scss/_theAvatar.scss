@@ -1,0 +1,101 @@
+.avatar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    font-weight: bolder;
+    justify-content: center;
+    border: 2px solid;
+    border-radius: 50%;
+    border: 2px solid #ffffff80;
+    width: 23px;
+    height: 23px;
+    align-items: center;
+    background-size: cover;
+    cursor: pointer;
+    color: #fff;
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  .avatar:hover {
+    z-index: 2;
+  }
+  .avatar::before {
+    // content: attr(datacontent);
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    translate: -50% 10px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    padding: 6px;
+    z-index: 2;
+    border-radius: 3px;
+    white-space: nowrap;
+    background: inherit;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .avatar:not(:first-child) {
+    margin-left: -10px;
+  }
+
+
+  .iconAvatar {
+    border-radius: 50%;
+    font-size: 17px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #ced2d8;
+    opacity: 0.8;
+    background: #b84e2e;
+    box-shadow: 1px 1px 6px 0px;
+    position: fixed;
+    bottom: 5.6rem;
+    right: 1.4rem;
+    z-index: 10;
+    .countNum {
+      position: absolute;
+      top: -5px;
+      right: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      border-radius: 50%;
+      height: 15px;
+      width: 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .iconAvatar:hover {
+    background: #7c0d0d;
+    color: #ece6e6;
+    opacity: 1;
+  }
+
+
+  
+.avatarClogging {
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .avatarBtn {
+    margin: "8px";
+    position: "fixed";
+    bottom: "5rem";
+    right: "2rem";
+    z-index: 6;
+  }

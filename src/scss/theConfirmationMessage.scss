@@ -1,0 +1,88 @@
+.messageOverlay {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;
+    // z-index: 100;
+}
+
+.instructionSlide {
+    z-index: 101;
+    background: #4d0552;
+    width: -moz-fit-content;
+    width: 400px;
+    max-width: 97vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transform: translateX(0%);
+    position: fixed;
+    bottom: 85px;
+    right: 10px;
+
+    &Content {
+
+        &Title {
+            color: #e3e3e3;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 5px;
+            user-select: none;
+        }
+
+        &Message {
+
+            color: #e3e3e3;
+            font-size: .8rem;
+            padding: 1rem 0;
+        }
+
+        &Btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            &Close {
+
+                background: #a73532;
+            }
+
+            &Continue {
+                background: #2aaa0b;
+            }
+
+            &Close,
+            &Continue {
+                padding: 5px 1.2rem;
+                border-radius: 20px;
+                color: #e3e3e3;
+                cursor: pointer;
+                user-select: none;
+            }
+
+        }
+    }
+}
+
+.openInstructionSlide {
+    transition: 0.3s ease-in-out;
+}
+
+.closeInstructionSlide {
+    transition: 0.3s ease-in-out;
+    transform: translateX(200%);
+    position: fixed
+}

@@ -1,0 +1,133 @@
+.scrollTemplate1 {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    position: relative;
+
+    &LeftScroll {
+        height: 3rem;
+        width: 3rem;
+        background: #fff;
+        display: flex;
+        color: #000;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        -webkit-user-select: none;
+        user-select: none;
+        position: sticky;
+        top: 5rem;
+        left: 0;
+
+        &Icon {
+            width: 3rem;
+        }
+    }
+
+    &RightScroll {
+        height: 3rem;
+        width: 3rem;
+        background: #fff;
+        display: flex;
+        color: #000;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        -webkit-user-select: none;
+        user-select: none;
+        position: sticky;
+        top: 5rem;
+        right: 0;
+
+        &Icon {
+            width: 3rem;
+        }
+    }
+
+    &LeftScroll:hover,
+    &RightScroll:hover {
+        scale: 1.02;
+        background: #121417;
+        color: #e3e3e3;
+        transition: .5s ease-in-out;
+        ;
+    }
+
+    &Item {
+        width: 10rem;
+        cursor: pointer;
+        &Image {
+            height: 10rem;
+            width: inherit;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+
+        &Image:hover {
+            scale: 1.02
+        }
+        &Content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 8rem;
+            &Title {}
+    
+            &Price {
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+    
+            &CartBtn {
+                background: #121417;
+                padding: .3rem 1rem;
+                width: max-content;
+                color: #e3e3e3;
+                font-size: .8rem;
+                margin: 1rem auto;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+            }
+    
+            &CartBtn:hover {
+                scale: 1.02;
+                transition: .3s ease-in-out;
+            }
+    
+          
+    
+            &Location {
+                width: -webkit-fill-available;
+                font-size: .8rem;
+                display: flex;
+                align-items: center;
+                ;
+            }
+        }
+    }
+
+
+}
+
+.applyBackground {
+    background: #4d0552 !important;
+    color: #e3e3e3;
+
+}
+
+.dialogContent {
+    .scrollTemplate1 {
+
+        width: 100vw;
+
+    }
+}

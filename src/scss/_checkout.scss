@@ -1,0 +1,197 @@
+.checkoutBtn {
+    background: #4d0552;
+    padding: 10px;
+    border-radius: 10px;
+    color: #e3e3e3;
+    cursor: pointer;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.receipt {
+    margin-bottom: 5rem;
+
+    &Product {
+        &Picture {
+            height: 20rem;
+            width: 100%;
+
+            &Content {
+                padding: 0 .5rem;
+                margin-top: .5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &Title {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .checkoutList {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 0 .5rem;
+
+        &Dates {
+            &Item {
+                font-size: .8rem;
+                display: flex;
+                gap: .5rem;
+                border-bottom: 1px solid blac
+            }
+
+            &Title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 1rem 0 .5rem 0;
+            }
+        }
+
+        &Summary {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            font-weight: 500;
+
+            &Title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 1rem 0 .5rem 0;
+            }
+
+            &Item {
+                display: flex;
+                gap: .5rem;
+                justify-content: space-between;
+                border-bottom: 1px solid #e3e3e3;
+            }
+        }
+
+        &Billing {
+            &Title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 1rem 0 0.5rem 0;
+            }
+
+            &Item {
+                display: flex;
+                gap: .5rem;
+                justify-content: space-between;
+                border-bottom: 1px solid #e3e3e3;
+
+                &Value {
+                    font-size: .8rem;
+                    line-height: 21px;
+                    overflow: hidden;
+                    position: relative;
+                    font-size: 0.8rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}
+
+
+.costTotal {
+    font-weight: 800;
+    padding: 1rem 0;
+}
+
+.checkoutSummary {
+    margin-bottom: 5rem;
+
+    &Top {}
+
+    &Bottom {
+        margin: 0 1rem;
+
+        .title {
+            font-size: .9rem;
+            padding: 2rem 0 0 10px;
+            text-align: center;
+        }
+
+        &Form {
+            &Btn {
+                background: #069034;
+                color: #e3e3e3;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin: .5rem auto;
+                cursor: pointer;
+
+                width: -webkit-fill-available;
+                max-width: 300px;
+            }
+
+            &Btns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                &Btn {
+                    background: #121417;
+                    color: #e3e3e3;
+                    width: -webkit-fill-available;
+                    height: 2rem;
+                    padding: 0 0.5rem;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    margin: 0.5rem auto;
+                    font-size: 0.8rem;
+                    cursor: pointer;
+                    justify-content: center;
+                }
+
+                .activeBtn {
+                    background: #069034 !important;
+                }
+            }
+
+            &Forgot {
+                text-align: center;
+                width: 100%;
+                display: block;
+                text-decoration: underline;
+                cursor: pointer;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+
+.checkoutList {
+    padding: 0 .3rem;
+
+    &Summary {
+        &Item {
+            display: flex;
+            align-items: center;
+            font-size: .8rem;
+            border-bottom: 1px solid #e3e3e3;
+            padding: .7rem 0;
+            justify-content: space-between;
+
+            &Value {
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

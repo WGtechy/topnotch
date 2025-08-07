@@ -1,0 +1,471 @@
+// @media screen and (max-width: 1035px) {
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 53.75rem;
+  overflow-x: hidden;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  width: 18rem;
+  padding: 1rem 0.625rem;
+  display: flex;
+  color: #e3e3e3;
+  flex-direction: column;
+  transition: all 0.1s ease-in-out;
+  z-index: 10;
+  height: 100lvh;
+
+  .sidebarTop {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 4rem;
+    padding-bottom: 1rem;
+
+    .logoWrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0.5rem 0;
+      color: #e3e3e3;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+
+      &Text {
+        color: #a73532;
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+
+      &Logo {
+        height: 2.6125rem;
+        overflow: hidden;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      &LogoSmall {
+        height: 2.6125rem;
+        overflow: hidden;
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  // sidebarLink
+  .sidebarLink {
+    padding: 0.5rem 0;
+
+    &Active {
+      border: 1px solid #f0f0f0;
+      padding: 0 7px;
+      border-radius: 15px;
+    }
+
+    &Container {
+      list-style-type: none;
+      position: relative;
+
+      li {
+        align-items: center;
+        color: #272727;
+        display: flex;
+        padding-bottom: .75rem;
+
+        .sidebarLinkIcon {
+          transition: none;
+          font-size: 2rem;
+          display: flex;
+
+          &Home {
+            color: #a73532;
+          }
+        }
+
+        a {
+          color: #e3e3e3;
+          font-size: 1.25rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          border-radius: 0.625rem;
+          text-decoration: none;
+          transition: #f4f5fc 0.2s ease-in-out;
+
+          img {
+            height: 2.125;
+            width: 2.125rem;
+          }
+
+          .link {
+            margin-left: 1.875rem;
+          }
+        }
+      }
+
+      &List {
+        &Sub {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: baseline !important;
+          padding: 0.75rem !important;
+          color: #e3e3e3 !important;
+          cursor: pointer;
+
+          &Item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+
+          li {
+            padding: 0.75rem !important;
+          }
+        }
+      }
+    }
+
+    &Active {
+      background: #272727;
+      color: #f4f5fc;
+    }
+  }
+
+  // sidebarBottom
+  .sidebarBottom {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    margin-top: auto;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    text-align: center;
+    border-radius: 1rem;
+    background: #fff;
+    /* padding-top: 4rem; */
+    margin-bottom: 3rem;
+    align-items: center;
+
+    .signUp {
+      color: #a73532;
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &Text {
+      color: #272727;
+      font-weight: 800;
+    }
+
+    button {
+      border-radius: 1rem;
+      outline: none;
+      margin: 0 autto;
+      margin-bottom: -1.75rem;
+      cursor: pointer;
+      min-height: 2.612rem;
+      font-weight: 800;
+      border: 1.5px solid #dce1eb;
+      padding: 0.5rem 0.75rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #272727;
+      color: #f0f0f0;
+    }
+  }
+
+  .expandBtn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: #272727;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    &Icon {
+      transform: rotate(180deg);
+      stroke: #272727;
+      width: 2.375rem;
+      height: 2.375rem;
+    }
+  }
+
+  .expandBtn:hover {
+    background: #f0f0f0;
+  }
+}
+
+
+.collapsed nav {
+  width: 4.75rem;
+}
+
+.collapsed .hide {
+  position: absolute;
+  display: none;
+}
+
+.collapsed .sidebarTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collapsed .logoWrapperLogo {
+  display: none;
+}
+
+.collapsed .logoWrapperLogoSmall {
+  display: block;
+}
+
+.collapsed .sidebarLink li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapsed .expandBtn {
+  justify-content: center;
+  margin-top: auto;
+}
+
+.notification {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #a73532;
+  top: -0.1875rem;
+  border: 0.1875rem solid #f4f5fc;
+  right: -0.1875rem;
+}
+
+.collapsed .expandBtnIcon {
+  transform: rotate(-360deg);
+}
+
+.tooltip {
+  position: relative;
+
+  &Content {
+    visibility: hidden;
+    background: #272727;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.375rem;
+    padding: 0.375rem;
+    position: absolute;
+    z-index: 1;
+    left: 4.6875rem;
+  }
+}
+
+.collapsed .tooltip:hover .tooltipContent {
+  visibility: visible;
+}
+
+.collapsed .layout {
+  margin-left: 5rem;
+}
+
+
+
+
+
+
+.closeNavMobile {
+  transform: translateX(-100%);
+  transition: all 0.6s ease-in-out;
+}
+
+.openNavMobile {
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  min-height: 0 !important;
+
+  .sidebarLink {
+    &Icon {
+      font-size: 1rem !important;
+
+      &Active {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .hideCollapse {
+    display: none
+  }
+}
+
+
+.nav .sidebarBottom .signUp {
+  font-size: 1rem;
+}
+
+.nav .sidebarLink ul li a .link {
+  margin-left: 0;
+  font-size: 1.2rem;
+}
+
+.nav .sidebarLink ul li a {
+  padding: 0.3rem 0.75rem !important;
+}
+
+.mobileMenu {
+  height: 4.5rem;
+  width: 100%;
+  background: transparent;
+  z-index: 5;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  // position: fixed;
+  top: 0;
+
+  &LeftIcon,
+  &RightIcon,
+  &RightSave {
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: #e3e3e3
+  }
+
+  &Left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #e3e3e3;
+    background: #4d05528c;
+    padding: .2rem 0.5rem;
+    border-radius: 10px;
+    max-width: 9rem;
+    width: max-content;
+
+    &Logo {
+      display: flex;
+      align-items: center;
+      color: #e3e3e3;
+      height: 2rem;
+      margin: auto 0;
+
+      &Text {
+        font-size: .8rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &Right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &Currency {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #e3e3e3;
+      height: 1.2rem;
+      padding: 0.9rem;
+      display: flex;
+      border-radius: 20px;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+
+      &Details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &Name {
+          font-weight: 700;
+          padding: 0 3px;
+        }
+
+        &Arrow {
+          display: flex;
+        }
+      }
+
+    }
+
+    &Save {
+      position: relative;
+      padding: 0 0.3rem;
+
+      &Count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.fullMenu {
+  position: sticky !important;
+
+  background: #4d0552;
+}
+
+.fullMenuOpenHeader {
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4), rgb(14 151 170));
+}
+
+// }
+// .mobileMenu, nav{
+//   display: none;
+// }
+
+@media screen and (max-width: 635px) {
+  .mobileMenu {
+    height: 3rem;
+
+  }
+}
+
+// ul
+// @media screen and (min-width: 1036px) {
+//   .mobileMenu{
+//     display: none;
+//   }
+//   .overlay{
+//     display: none !important
+//   }
+
+//   .nav{
+//     display: none;
+//   }
+//  }
+
+.absoluteMenubar {
+  position: absolute !important
+}

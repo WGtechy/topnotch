@@ -1,0 +1,52 @@
+
+.emptyPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  min-height: 70vh;
+  height: inherit;
+  width: inherit;
+  &Content {
+    display: flex;
+    padding: 0 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+    margin: 1rem;
+  
+    &Image {
+      width: 30vw
+    }
+  
+    &Btn {
+      height: 2.5rem;
+      border-radius: 10px;
+      color: #e3e3e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      width: -webkit-fill-available;
+      background: #4d0552;
+    }
+  
+    &Btn:hover {
+      scale: 1.02;
+  
+    }
+  
+    h3 {
+      text-align: center;
+      margin: 0;
+    }
+  
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

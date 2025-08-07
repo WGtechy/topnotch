@@ -1,0 +1,9 @@
+.products{
+    display: flex
+;
+    margin-top: 2rem;
+    gap: 1rem;
+    &Filter{
+        width: 20rem
+    }
+}

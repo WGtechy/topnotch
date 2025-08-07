@@ -1,0 +1,27 @@
+.partnersContainer {
+  &Title {
+    font-size: 1.5rem;
+  }
+  &Logos {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+    &Logo {
+      width: 6rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .partnersContainer {
+    &Logo {
+      animation: partner 5s linear infinite;
+    }
+  }
+}
+
+@keyframes partner {
+  to {
+    translate: calc(-4 * 115px);
+  }
+}

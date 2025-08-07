@@ -1,0 +1,31 @@
+.policies{
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+    user-select: none;
+        &Content{
+            &Title{
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: .5rem 0;
+            };
+            &Description{
+                padding: .5rem 0;
+                font-weight: 600;
+            };
+            &Items{
+                list-style: disc;
+                padding: 0 2rem;
+            }
+    }
+}
+.termsAndConditions{
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+    user-select: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    white-space: pre-wrap;
+
+}

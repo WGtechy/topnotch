@@ -1,0 +1,177 @@
+.cardDisplayForm {
+    padding: 0 0.3rem 0.3rem 0.3rem;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 4;
+
+    &Search {
+        width: 100%;
+        height: 3rem;
+        border-radius: 10px;
+        border: 1px solid #4d0552;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        background: #fff;
+
+        &IconLeft,
+        &IconRight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: inherit;
+        }
+
+        &IconLeft {
+            width: 3.5rem;
+            border-right: 1px solid #e3e3e3;
+            cursor: pointer;
+            border-radius: 10px 0 0 10px;
+        }
+
+        &IconLeft:hover {
+            background: #4d0552;
+            color: #e3e3e3;
+            scale: 1.03;
+            transition: .2s ease-in-out;
+
+        }
+
+        &IconRight {
+            cursor: pointer;
+            width: auto;
+            padding: 0 3px 0 16px;
+        }
+
+        &Form {
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+            &Input {
+                border: none;
+                outline: none;
+                width: inherit;
+                padding: 0 1rem;
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            &Icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: inherit;
+                border-radius: 0 10px 10px 0;
+                width: 3rem;
+                cursor: pointer;
+                // &Item{
+                // }
+            }
+
+            &Icon:hover {
+                background: #4d0552;
+                color: #e3e3e3;
+                scale: 1.03;
+                transition: .2s ease-in-out;
+            }
+        }
+    }
+
+    &Options {
+        flex-direction: column;
+        gap: .5rem;
+
+        &Btns {
+            display: flex;
+            gap: .5rem;
+
+            &Submit,
+            &Close {
+                height: 2.5rem;
+                border-radius: 10px;
+                color: #e3e3e3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                padding: 0.3rem 0;
+                width: -webkit-fill-available;
+            }
+
+            &Close {
+                background: #a73532;
+
+            }
+
+            &Submit {
+                background: #000;
+
+            }
+
+            &Submit:hover,
+            &Close:hover {
+                scale: 1.02;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
+
+    &OptionsHide {
+        display: none;
+        transition: 1s ease-in-out;
+    }
+
+    &OptionsShow {
+        display: flex;
+        transition: 3s ease-in-out;
+        transform: translateY(0);
+    }
+}
+
+
+.filterBoard {
+    position: relative;
+    height: 57vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+    &Img {
+        position: absolute
+    }
+}
+
+
+@media screen and (min-device-width: 651px) and (max-device-width: 1390px) {
+
+    //  .overlayCardContainer{
+    //     width: 100%;
+    //     height: 100vh;
+    //     position: fixed;
+    //     left: 0;
+    //     top: 0;
+    //     z-index: 5;
+    //     background: #e3e3e37d;
+    //  }
+    .cardDisplayForm {
+        max-width: 95vw;
+        width: 600px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    // .cardDisplayFormAbsolute{
+    //      position: absolute;
+    //  }
+    //  .cardDisplayFormMobile
+    //   {
+    //     display: none
+    //   }
+}

@@ -1,0 +1,94 @@
+.comments {
+    &Title{
+        
+    padding: 2rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: flex
+    ;
+        gap: 0.5rem;
+        align-items: center;  
+        &Icon{
+            display: flex
+            ;
+                align-items: center;
+                font-size: 1.3rem;
+        }
+    }
+    &Container {
+        padding: .5rem;
+        padding: 0.5rem;
+        display: flex;
+        max-width: 40rem;
+        width: -webkit-fill-available;
+        gap: .5rem;
+
+        &Avatar {
+            width: 2.7rem;
+        }
+
+        &Item {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            &Header {
+
+                &Date {
+                    font-size: .7rem;
+                }
+            }
+
+            &Content {
+                font-size: .9rem;
+                font-weight: normal;
+                background: #fff;
+                padding: .5rem;
+                border-radius: 10px;
+
+            }
+        }
+    }
+    &Empty{
+        width: inherit;
+        height: 5rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0
+    }
+}
+
+.dialogContent {
+    .comments {
+        margin-bottom: 3rem;
+        padding: 0 1rem
+    }
+
+    .commentArea {
+        width: -webkit-fill-available;
+        background: #fff;
+        height: 3rem;
+        position: sticky;
+        top: 3.5rem;
+        z-index: 100;
+        &Form {
+            height: inherit;
+            display: flex;
+
+            &Input {
+                height: inherit;
+                width: 100%;
+                outline: none;
+                border: 0;
+                padding: 0 .5rem
+            }
+            .sendReply{
+                width: 3rem;
+                cursor: pointer;;
+            }
+        }
+    }
+}

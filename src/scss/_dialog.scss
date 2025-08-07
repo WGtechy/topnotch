@@ -1,0 +1,262 @@
+.dialog{
+    height: 100vh;
+    width: 100vw;
+    // max-width: 700px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    .searchContent{
+      display: flex;
+          flex-direction: column;
+          align-items: center;
+    &Form{
+      width: 100%;
+      // background: rgb(255, 255, 255);
+      height: 45px;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+  
+        // width: 600px;
+        // background: rgb(255, 255, 255);
+        // height: 45px;
+        // border-radius: 10px;
+        // position: relative;
+        // display: flex;
+        // align-items: center;
+        // /* padding: 0 1rem; */
+        // color: #202124;
+        // max-width: 95vw;
+        // border: 1px solid #140973;
+    }
+    }
+    &Content{
+        // position: sticky;
+        top: 0;
+        right: 0;
+        right: 0;
+        height: inherit;
+        // height: max-content;
+        overflow-x: hidden;
+        min-height: -webkit-fill-available;
+        width: 100%;
+    background: #f8f8f8;
+    position: relative;
+    }
+}
+
+
+@media (min-width: 700px){
+.dialogContentReponsive{
+    max-width: 700px !important;
+ }
+ .dialogEmpty{
+    width: inherit;
+    height: 100vh;
+    position: sticky;
+    bottom: 0;
+    top: 0;
+ }
+}
+
+.closeDialog {
+    opacity: 0;
+    // transform: translateX(100%);
+    transform: scale(0);
+    transition: .5s;
+}
+
+.openDialog {
+    opacity: 1;
+    transform: scale(1);
+
+    // transform: translateX(0%);
+    transition: .5s;
+}
+
+.appBar{
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    z-index: 100;
+    top: 0px;
+    background: #4d0552;
+    left: 0;
+    right: 0px;
+    position: sticky;
+    // background: rgb(32, 33, 36);
+    // color: rgb(227, 227, 227);
+    padding: 0px 5px;
+    box-shadow: 0px 0px 0px !important;
+}
+
+.toolbar{
+  position: relative;
+  align-items: center;
+  min-height: 56px;
+  display: flex
+;
+  flex-direction: row;
+  padding-left: 0px;
+  padding-right: 0px;
+  justify-content: space-between;
+  background: #4d0552;
+  color: #e3e3e3 !important;
+  border-bottom: 1px solid #4e384f;
+    }
+
+
+@media (orientation: landscape){
+.toolbar {
+    min-height: 48px;
+}}
+
+@media (min-width: 700px){
+.dialogContentReponsive{
+    max-width: 700px !important;
+ }
+ .dialogEmpty{
+    width: inherit;
+    height: 100vh;
+    position: sticky;
+    bottom: 0;
+    top: 0;
+ }
+}
+
+.arrowStyle{
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+
+@media (min-width: 900px){
+    
+.dialogContentResponsive{
+    width: 40vw
+}
+.dialgEmpty{
+    width: inherit;
+}
+}
+
+.headerRightSection{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
+    // display: flex;
+  // flex-direction: row;
+  // gap: 4px;
+  // height: inherit;
+  // justify-content: center;
+  // align-items: center;
+  // position: relative;
+
+  // overflow: hidden;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 1;
+  // -webkit-box-orient: vertical;
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: #f8f8f8;
+    .loadingIcon{
+        padding: 0
+    }
+    input {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 auto;
+      height: 35px !important;
+      padding: 0 5px !important;
+      font-size: 16px;
+      border: 0;
+      width: 100%;
+      border-radius: 8px;
+      background: #fff !important;
+      color: #212422;
+      outline: none;
+      opacity: 1;
+      visibility: visible;
+      margin-right: auto;
+      transition-property: opacity, visibility;
+      transition-duration: 0.3s;
+      border: 1px solid #e3e3e3;
+    }
+    .btn {
+      position: absolute;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 0;
+      height: -webkit-fill-available;
+      padding: 0 20px;
+    }
+  }
+  .headerRightSectionAvatar {
+    display: flex;
+    cursor: pointer;
+
+    .roundAvatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 2px dotted #3b3d3e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -10px;
+      z-index: 1;
+    }
+  }
+}
+
+
+.networkContainer{
+  margin: 0 1rem 2rem 1rem;
+}
+
+
+.networkProfileContainer{
+  // margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  &Message{
+    width: 90%;
+    text-align: center;
+  }
+  &Name{
+  }
+  &Group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    
+  }
+}
+
+
+// transform
+
+
+@media (min-width: 480px) {
+    .dialogContentReponsive {
+        box-shadow: 1px 4px 6px #e3e3e3;
+    }
+}

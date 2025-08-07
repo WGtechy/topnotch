@@ -1,0 +1,473 @@
+.dateWrapper {
+  padding: 1rem 0;
+
+  &Content {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    max-height: 85vh;
+    align-items: center;
+    justify-content: center;
+    max-width: 950px;
+    margin: auto;
+
+    &Left {
+      width: -webkit-fill-available;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: rgba(0, 0, 0, 0.3490196078) 0px 5px 10px;
+      margin: 0.5rem;
+      border-radius: 10px;
+      background: #e3e3e3;
+      padding-bottom: 1rem;
+
+      &List {
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0 1rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-x: hidden;
+        max-height: 70vh;
+
+        &Empty {
+          margin: auto;
+          font-size: 1.5rem;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        &Item {
+          width: -webkit-fill-available;
+          display: flex;
+          color: #727171;
+          font-weight: 600;
+          font-size: 0.9rem;
+          align-items: center;
+          transition: 0.5s ease-in-out;
+          justify-content: space-between;
+          flex: 0 0 3rem;
+
+          &Bin {
+            height: 2rem;
+            width: 2rem;
+            display: flex;
+            align-items: center;
+            background: #e3e3e3;
+            justify-content: center;
+            border-radius: 50%;
+            color: #000;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+          }
+
+          &Bin:hover {
+            scale: 1.2;
+            background: #a73532;
+            color: #fff;
+            transition: 0.5s ease-in-out;
+          }
+        }
+
+        &Item:hover {
+          scale: 1.02;
+          color: #4d0552;
+          transition: 0.5s ease-in-out;
+        }
+
+        &Item+&Item {
+          border-top: 1px solid #fff;
+        }
+      }
+
+      &Header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0.71rem 0;
+        background: #fff;
+        border-radius: 10px 10px 0 0;
+
+        &Left {
+          display: flex;
+          gap: .2rem;
+          flex-direction: column;
+
+          &Time {
+            display: flex;
+            width: auto;
+            font-weight: 600;
+            font-size: .8rem;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+
+            &Left,
+            &Right {
+              display: flex;
+              gap: 8px;
+              align-items: center;
+              justify-content: flex-start;
+              flex-direction: column;
+
+              &Amount {
+                &Container {
+                  border-radius: 10px;
+                  border: 1px solid #4d0552;
+                  padding: 0.5rem;
+                }
+              }
+
+              &Time {
+                font-size: 0.8rem;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+
+        &Right {
+          &Amount {
+            &Container {
+              border-bottom: 4px double black;
+              font-weight: 800;
+            }
+
+            &Title {
+              font-size: .8rem
+            }
+
+            &Mobile {
+              display: none
+            }
+          }
+        }
+      }
+    }
+
+    &Empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      width: -webkit-fill-available;
+    }
+  }
+
+  &Footer {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+    &Content {
+      display: flex;
+      flex-direction: column;
+
+      &Instruction {
+        font-size: 0.8rem;
+        padding: 5px 0;
+      }
+
+      &Btns {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        &WhatsApp {
+
+          background: #2aaa0b;
+        }
+
+        &WhatsApp,
+        &Payment {
+          color: #fff;
+          height: 2rem;
+          font-size: 0.81rem;
+          padding: 0.1rem 0.9rem;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          gap: 10px;
+          cursor: pointer;
+        }
+
+        &Payment {
+
+          background: #4d0552;
+        }
+      }
+    }
+  }
+}
+
+.time {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+
+
+  &Input {
+    width: max-content;
+    border-radius: 10px;
+    padding: .2rem;
+    outline: none;
+    margin: 8px 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .dateWrapperContentEmpty {
+    display: none
+  }
+
+  .dateWrapper {
+    padding: 1rem 0 6rem 0;
+
+    &Content {
+      flex-direction: column-reverse;
+      max-height: fit-content;
+
+      &Left {
+        width: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: rgba(0, 0, 0, 0.3490196078) 0px 5px 10px;
+        margin: 0.5rem;
+        border-radius: 10px;
+        background: #fff;
+
+        &List {
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0 1rem;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          overflow-x: hidden;
+
+          &Empty {
+            font-size: 1rem;
+            min-height: 8rem;
+            display: flex;
+            align-items: center;
+          }
+
+          &Item {
+            width: -webkit-fill-available;
+            display: flex;
+            color: #727171;
+            font-weight: 600;
+            font-size: 0.9rem;
+            align-items: center;
+            transition: 0.5s ease-in-out;
+            justify-content: space-between;
+            flex: 0 0 3rem;
+
+            &Bin {
+              height: 2rem;
+              width: 2rem;
+              display: flex;
+              align-items: center;
+              background: #e3e3e3;
+              justify-content: center;
+              border-radius: 50%;
+              color: #000;
+              cursor: pointer;
+              transition: 0.5s ease-in-out;
+            }
+
+            &Bin:hover {
+              scale: 1.2;
+              background: #a73532;
+              color: #fff;
+              transition: 0.5s ease-in-out;
+            }
+          }
+
+          &Item:hover {
+            scale: 1.02;
+            color: #4d0552;
+            transition: 0.5s ease-in-out;
+          }
+
+          &Item+&Item {
+            border-top: 1px solid #e3e3e3;
+          }
+        }
+
+        &Footer {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0.71rem 0;
+          background: #fff;
+          border-radius: 0 0 10px 10px;
+
+          &Left {
+            &Time {
+              display: flex;
+              width: auto;
+              gap: 10px;
+              align-items: center;
+              justify-content: space-between;
+              padding: 0 1rem;
+
+              &Left,
+              &Right {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                &Amount {
+                  &Container {
+                    border-radius: 10px;
+                    border: 1px solid #4d0552;
+                    padding: 0.5rem;
+                  }
+                }
+
+                &Time {
+                  font-size: 0.8rem;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+
+          &Right {
+            &Amount {
+              padding: 7px 0;
+              font-weight: 700;
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+
+              &Title {
+                font-size: .8rem
+              }
+
+              &Mobile {
+                display: flex;
+
+                &Btns {
+                  margin: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+
+                  &WhatsApp {
+
+                    background: #2aaa0b;
+                  }
+
+                  &WhatsApp,
+                  &Payment {
+                    color: #fff;
+                    height: 2rem;
+                    font-size: 0.81rem;
+                    padding: 0.1rem 0.5rem;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    gap: 10px;
+                  }
+
+                  &Payment {
+
+                    background: #4d0552;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &Footer {
+      //       display: flex;
+      //   margin: auto;
+      //   align-items: center;
+      //   justify-content: center;
+      display: none;
+      //   &Content {
+      //     display: flex;
+      //     flex-direction: column;
+      //     &Instruction {
+      //       font-size: 0.8rem;
+      //       padding: 5px 0;
+      //         }
+      //     &Btns {
+      //       margin: auto;
+      //       display: flex;
+      //       align-items: center;
+      //       justify-content: center;
+      //       gap: 10px;
+      //       &WhatsApp {
+
+      //           background: #2aaa0b;
+      //       }
+      //           &WhatsApp, &Payment {
+      //               color: #fff;
+      //               height: 2rem;
+      //               font-size: 0.81rem;
+      //               padding: 0.1rem 0.5rem;
+      //               border-radius: 20px;
+      //               display: flex;
+      //               align-items: center;
+      //               justify-content: center;
+      //               display: flex;
+      //               gap: 10px;
+      //       }
+      //       &Payment {
+
+      //           background: #4d0552;
+      //       }
+      //     }
+      //   }
+    }
+  }
+}
+
+.modalRight {
+  &Product {
+    padding: 0 .5rem;
+
+    &Dependent {
+      font-size: .7rem;
+    }
+
+    &Price {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+  }
+}
+
+.checkInTime {
+  position: sticky;
+  bottom: 0;
+  height: 3rem;
+  background: #4d0552;
+  padding: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #e3e3e3;
+}

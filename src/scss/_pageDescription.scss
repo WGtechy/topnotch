@@ -1,0 +1,578 @@
+.productPageContainer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.shortletPage {
+  &Header {
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3490196078) 0px 5px 15px;
+    background: #fff;
+    align-items: center;
+    margin: 0.5rem;
+    border-radius: 10px;
+
+    &Top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 5px 0 0;
+
+      &Left {
+        &Bottom {
+          line-height: 21px;
+          max-height: 126px;
+          overflow: hidden;
+          position: relative;
+          font-size: 1.1rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+      }
+
+      &Right {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-size: 1rem;
+
+        &Icon {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          cursor: pointer;
+          background: #4d0552;
+          padding: 3px 8px;
+          border-radius: 10px;
+          font-size: 1rem;
+
+          &Name {
+            font-size: 0.9rem;
+          }
+        }
+
+        &Icon:hover {
+          background: #a73532;
+          scale: 1.1;
+        }
+      }
+    }
+
+    &Bottom {
+      .productCategory {
+        display: flex;
+        gap: .3rem;
+
+        &Item {
+          background: #616161;
+          color: #e3e3e3;
+          border-radius: 10px;
+          padding: .2rem .5rem;
+        }
+      }
+
+      &Location {
+        font-size: .7rem;
+        color: #414040;
+      }
+
+      &Top {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #a73532;
+      }
+
+      &Middle {
+        padding-bottom: 1rem;
+      }
+
+      &Bottom {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: #414040;
+
+        &Title {
+          font-weight: 700;
+          font-size: 1rem;
+        }
+
+        &Value {
+          font-size: 0.8rem;
+          font-weight: 800;
+        }
+      }
+
+      &Price {
+        display: flex;
+        color: #414040;
+        padding: .31rem 0;
+
+        &Amount {
+          position: relative;
+          display: flex;
+
+          &Currency {
+            font-size: .8rem;
+            font-weight: 600;
+          }
+
+          &Figure {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+        }
+
+        &Dependent {
+          display: flex;
+          align-items: center;
+          font-size: 0.7rem;
+          font-weight: 700;
+          padding: 0 4px;
+        }
+      }
+
+      &Btns {
+        display: flex;
+        gap: 10px;
+        margin: 1rem 0;
+
+        &Item {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          cursor: pointer;
+          background: #4d0552;
+          padding: 3px 8px;
+          border-radius: 10px;
+          font-size: 1rem;
+        }
+
+        &Item:hover {
+          background: #a73532;
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+
+    &Left {
+      &ImagesContainer {
+        box-shadow: #00000059 0px 5px 15px;
+        padding: 0;
+        margin: 0.5rem;
+        border-radius: 10px;
+        padding: 5px;
+        background: #e3e3e3;
+
+        .display {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: .5rem;
+
+          &Video {
+            height: 90%;
+            border-radius: 10px;
+          }
+
+          &Control {
+            color: #a73532;
+            cursor: pointer;
+            border: 1px solid;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .1rem;
+          }
+
+          &Control:hover {
+            scale: 1.05
+          }
+        }
+
+        ;
+
+        &Display {
+          width: 100%;
+          height: 80vh;
+          position: relative;
+          transition: 1s ease-in-out;
+          background: #000;
+          padding: 1rem;
+          border-radius: 5px;
+
+          &Image {
+            border-radius: 10px;
+            object-fit: contain !important;
+            cursor: pointer;
+          }
+
+          &LeftArrow {
+            left: 0;
+          }
+
+          &RightArrow {
+            right: 0;
+          }
+
+          &RightArrow:hover,
+          &LeftArrow:hover {
+            scale: 1.1;
+            background: #a73532;
+            color: #e3e3e3;
+          }
+
+          &Arrow {
+            position: absolute;
+            top: 47%;
+            background: #e3e3e3;
+            margin: 1rem;
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+
+        // &Array{
+        //     display: flex;
+        //     margin: 1rem;
+        //     border-radius: 10px;
+        //     gap: 10px;
+        //     overflow-y: hidden;
+        //     &Item{
+        //         width: 200px;
+        //         height: 200px;
+        //         cursor: pointer;
+        //         &Image{
+        //             border-radius: 10px;
+        //         }
+        //     }
+        // }
+      }
+
+      &Description {
+        &Title {
+          font-size: 1.2rem;
+          padding: 0.5rem 0;
+          font-weight: 700;
+        }
+
+        &Documents {
+          list-style-type: disclosure-closed;
+          padding: 0 2rem;
+        }
+
+        &Info {
+          font-size: 0.8rem;
+          font-weight: 400;
+          padding: 5px;
+          white-space: pre-wrap;
+        }
+      }
+    }
+
+    &Right {
+      width: 30vw;
+
+      .advert {
+        box-shadow: rgba(0, 0, 0, 0.3490196078) 0px 5px 10px;
+        padding: 0;
+        margin: 0.5rem;
+        border-radius: 10px;
+        padding: 5px;
+        background: #fff;
+        cursor: pointer;
+
+        &Item {
+          &Image {
+            height: 10rem;
+          }
+        }
+
+        &Title {
+          font-size: 1rem;
+          font-weight: 700;
+          padding: .5rem 0;
+        }
+
+        &Item {
+          &Content {
+            &Title {
+              font-size: .8rem;
+            }
+
+            &Price {
+              display: flex;
+              align-items: center;
+              justify-content: end;
+              font-weight: 800;
+            }
+          }
+
+          &Btn {
+            width: 100%;
+            display: flex;
+            padding: .5rem;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            background: #4d0552;
+            color: #fff
+          }
+
+          &Btn:hover {
+            background: #a73532;
+          }
+        }
+      }
+
+      .advert:hover {
+        border: 1px solid #4d0552
+      }
+    }
+  }
+}
+
+.imageSliderFoot {
+  margin: 1rem;
+
+  &Wrapper {
+    position: relative;
+
+    .sliderWrapperNavigation {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .imageList {
+      display: grid;
+      grid-template-columns: repeat(20, 1fr);
+      gap: 18px;
+      font-size: 0;
+      list-style: none;
+      margin-bottom: 30px;
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      .imageItem {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+    }
+
+    .imageList::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &Scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &Track {
+      background: #ccc;
+      width: 100%;
+      height: 2px;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    &Thumb {
+      position: absolute;
+      background: #000;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      height: 100%;
+      cursor: grab;
+      border-radius: inherit;
+    }
+
+    &Thumb:active {
+      cursor: grabbing;
+      height: 8px;
+      top: -2px;
+    }
+
+    &Thumb::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10px;
+      bottom: -10px;
+    }
+  }
+
+  &Scrollbar:hover {
+    &Track {
+      height: 4px;
+    }
+  }
+}
+
+.shortletPageContentLeftContainerGlobalStyle {
+  box-shadow: rgba(0, 0, 0, 0.3490196078) 0px 5px 10px;
+  padding: 0;
+  margin: 0.5rem;
+  border-radius: 10px;
+  padding: 5px;
+  background: #fff;
+}
+
+.shortletPageContentLeftDescription {
+  &Policies {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &Text {
+      font-size: 0.8rem;
+      font-weight: 400;
+      padding: 5px;
+      white-space: pre-wrap;
+      line-height: 21px;
+      overflow: hidden;
+      position: relative;
+      font-size: 0.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 13;
+      -webkit-box-orient: vertical;
+    }
+
+    &Show {
+      font-size: 0.8rem;
+      font-weight: 400;
+      padding: 5px;
+      white-space: pre-wrap;
+      line-height: 21px;
+      overflow: hidden;
+      position: relative;
+      font-size: 0.8rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    &Btn {
+      padding: 0 1rem;
+      cursor: pointer;
+      padding: .5rem 1rem;
+      margin: 1rem 0;
+    }
+
+  }
+}
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 750px) {
+  .shortletPage {
+    &Header {
+      &Top {
+        display: none;
+      }
+    }
+
+    &Content {
+      display: block;
+
+      &Right {
+        display: none;
+      }
+    }
+  }
+
+}
+
+// @media only screen and (min-width: 751px) {
+//   .shortletPage {
+
+//     &Content{
+//       display: flex;
+//       max-width: 1000px;
+//       margin: auto;
+//       &Left{
+//         width: 60vw
+//       }
+//       &Right{
+//         width: 40vw;
+//       }
+//     }
+//   }
+
+// }
+
+@media only screen and (max-width: 650px) {
+  .imageSliderFoot {
+    &Wrapper {
+      &Navigation {
+        display: none !important;
+      }
+
+      .imageList {
+        gap: 10px;
+        margin-bottom: 15px;
+        scroll-snap-type: x mandatory;
+
+        .imageItem {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+
+    &Scrollbar {
+      &Thumb {
+        width: 20%;
+      }
+    }
+  }
+}
+
+.modalContent {
+  margin-top: 1rem;
+  max-width: 1200px;
+}
+
+.modalBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 700;
+}
+
+
+.media {
+  .singleMediaContainer {
+    height: 40vh;
+
+    &Image {
+      object-fit: contain;
+    }
+  }
+}

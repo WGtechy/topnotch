@@ -1,0 +1,36 @@
+.cashout {
+    padding: 0 .5rem;
+    margin: 2rem 0;
+
+    &Balance {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    ;
+
+    &Amount {
+        width: 500px;
+        margin: auto;
+        max-width: 95%;
+
+        &Form {
+            &Btn {
+                padding: 0.5rem 1rem;
+                background: #4d0552;
+                cursor: pointer;
+                color: #e3e3e3;
+                border-radius: 10px;
+                margin: 1rem auto;
+                transition: 0.3s ease-in-out;
+                width: max-content;
+            }
+
+            &Btn:hover {
+                scale: 1.02;
+                transition: 0.3s ease-in-out;
+
+            }
+        }
+    }
+}

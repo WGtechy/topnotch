@@ -1,0 +1,67 @@
+.mediaModalContainer {
+    padding: 2rem 0;
+}
+
+.mediaCard {
+    border-radius: 10px;
+    width: -webkit-fill-available;
+    // max-width: 400px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    float: left;
+    box-shadow: 1px 0px 4px #fff;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    height: -webkit-fill-available;
+    max-height: 60vh;
+    position: relative;
+
+    &VideoContainer {
+        position: relative;
+        height: inherit;
+        width: inherit;
+
+        &Icon {
+            position: absolute;
+            height: 2rem;
+            width: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e3e3e3;
+            top: 10px;
+            left: 10px;
+            border-radius: 50%;
+            color: #4d0552;
+        }
+
+        &Item {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    .checkContainer {
+        position: absolute;
+        background: #fff;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #a73532;
+        right: 5px;
+        border-radius: 50%;
+        top: 5px;
+        font-size: 1.5rem;
+        font-weight: 900;
+        z-index: 2;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+}

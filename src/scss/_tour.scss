@@ -1,0 +1,119 @@
+.tour {
+    margin-bottom: 5rem;
+
+    &Title {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    &Info {
+        margin: 1rem 0;
+
+        &Title {
+            margin: 0 .5rem;
+            font-weight: 700;
+            font-size: 1.5rem
+        }
+
+        ;
+
+        &Price,
+        &Description {
+            margin: 0 .5rem;
+        }
+
+        &Price {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        &Pay {
+            background: #069034;
+            color: #e3e3e3;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 0.5rem auto;
+            cursor: pointer;
+            width: -webkit-fill-available;
+            max-width: 300px;
+        }
+
+        &Details {
+            border: 1px solid #e3e3e3;
+            width: 95vw;
+            padding: .5rem;
+            margin: 1rem .5rem;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            &Delete {
+                background: #a73532;
+                color: #e3e3e3;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 0.5rem auto;
+                cursor: pointer;
+                width: -webkit-fill-available;
+                max-width: 300px;
+            }
+
+            &Item {
+                display: flex;
+                flex-direction: column;
+
+                &Name {
+                    font-weight: 500;
+                }
+
+                &Value {
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+        &Form {
+            margin: .5rem 0;
+            background: #4d0552;
+            color: #e3e3e3;
+            padding: .5rem 0;
+
+            &Title {
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-top: 0.5rem;
+                padding: 1rem;
+            }
+
+            .tourForm {
+                width: 90%;
+                margin: auto;
+
+            }
+        }
+    }
+}
+
+.homeContentBtnTour {
+    background: #00000094;
+    margin: auto;
+    height: 2.5rem;
+    color: #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0 1rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 25px;
+    left: 9rem;
+}

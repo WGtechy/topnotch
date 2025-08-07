@@ -1,0 +1,389 @@
+@media only screen and (max-width: 1140px) {
+    .productInfo {
+        &Nav {
+            &Price {
+                display: none;
+            }
+        }
+
+    }
+
+    .scrollTemplate {
+        &LeftScroll &RightScroll {
+            display: none
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .wideScreenItemMediaFooter {
+        &Icon {
+            color: #00000094;
+            font-size: 2rem;
+            background: none;
+
+            &Value {
+                color: #00000094;
+                top: -8.2px
+            }
+        }
+    }
+
+    .wideScreenItemMediaFooterIcon:hover {
+        background: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    // .hideAllIcons {
+    //     transform: unset;
+    // }
+
+    //    Full screen media
+    // Full screen with some items
+    .navbarContent .leftHeaderMenuCategory {
+        display: flex;
+    }
+
+
+    .scrollTemplate {
+        &RightScroll {
+            display: none !important
+        }
+
+        &LeftScroll {
+            display: none !important;
+        }
+    }
+
+    ;
+
+    .blockTemplateData {
+        margin: 0 2rem;
+    }
+
+    .productInfoRecommendations {
+        width: 100% !important;
+    }
+
+    .dashboard {
+        &Left {
+
+            padding: 0;
+            margin: 0;
+
+            &Card {
+                padding: 0;
+
+                .scrollTemplate1 {
+                    padding: 1rem .5rem
+                }
+            }
+        }
+    }
+
+    .mobileFooter {
+        display: flex;
+        height: 5vh;
+        align-items: center;
+        width: 100%;
+        padding: 0 .5rem;
+        position: fixed;
+        bottom: 0;
+        z-index: 3;
+
+        &Left {
+            display: flex;
+            flex-direction: row;
+            gap: .3rem;
+            overflow-y: hidden;
+            width: 100%;
+
+            &Link {
+                display: flex;
+                width: 98%;
+                overflow-x: auto;
+                gap: .5rem;
+            }
+
+            &Avatar {
+                position: sticky;
+                right: -1px;
+                background: #fff;
+                border-radius: 50%;
+            }
+
+            &Item {
+                border: 1px solid #e3e3e375;
+                padding: 0.1rem 1rem;
+                color: #121417;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 1px 1px 6px #e3e3e375;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+                background: #121417a8;
+                color: #e3e3e3;
+            }
+
+            .titleActive {
+                background: #4d0552a8;
+                color: #e3e3e3;
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        &Right {
+            width: 2.5rem;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &Auth {
+            background: #e3e3e3;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+
+    .productInfo {
+        &Calculation {
+            bottom: 1.5rem !important;
+            width: 100vw;
+            max-width: -webkit-fill-available !important;
+            right: 0 !important;
+            margin: 0;
+            border-radius: 0 !important;
+            margin-bottom: 0 !important;
+
+            &Description {
+                &Title {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    margin: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .cardDisplayGrid {
+        columns: 1;
+    }
+}
+
+
+
+
+@media screen and (min-width: 480px) and (max-width: 680px) {
+
+    .cardDisplayGrid {
+        columns: 1;
+    }
+
+    .cardOneImage {
+        height: 15rem !important;
+    }
+
+    // Full screen with some items
+    .wideScreenItem {
+        &Details {
+            transform: scale(0);
+            // width: 1px;
+            display: none;
+        }
+
+        &Media {
+            width: 900px;
+            max-width: -webkit-fill-available;
+
+            &Item {
+                width: 567px;
+                max-width: 100%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .blockTemplateData {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .rightTemplateData {
+        display: none;
+    }
+
+    .dashboardLeft {
+        width: 100%
+    }
+
+    .blockTemplateData {
+        display: flex;
+        width: 100%;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-direction: row;
+        gap: 1rem;
+
+        .dashboardRightEarning {
+            width: 35rem;
+        }
+
+        .dashboardRightProfile {
+            width: 20rem;
+
+            &Avatar {
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            &Table {
+                width: 18rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .adjustable {
+        display: block;
+    }
+
+}
+
+@media (display-mode: standalone){
+    .homeContentScreenItemMediaFooter, .homeContentScreenItemMediaDescription{
+        bottom: 1rem !important
+    }
+    .productInfoCalculation{
+        bottom: 0 !important;
+    }
+    .navbarHide {
+    transition: 0.5s;
+    transform: translateY(0%);
+    }
+    .productInfoCalculation{
+        bottom: 0 !important
+    }
+}
+
+// @media only screen and (min-width: 1010.09px) {
+//     .adjustable {
+//         display: none;
+//     }
+// }
+
+@media only screen and (min-width: 680px) and (max-width: 1010px) {
+    .cardDisplayGrid {
+        columns: 2;
+    }
+
+    // display the modal and hide all components
+    .wideScreenItem {
+        &Details {
+            transform: scale(0);
+            // width: 1px;
+            display: none;
+        }
+
+        &Media {
+            width: 900px;
+            max-width: -webkit-fill-available;
+
+            &Item {
+                margin: auto
+            }
+
+            &Time {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1010px) and (max-width: 1200px) {
+    .cardDisplayGrid {
+        columns: 3;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .cardDisplayGrid {
+        columns: 4;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    .productInfo {
+        &Title {
+            padding: 0 .5rem;
+            font-size: 1.2rem;
+        }
+
+        &Location {
+            padding: 0 .5rem;
+            font-size: .8rem;
+        }
+
+        &Recommendations,
+        &Customer {
+            // display: flex;
+            // flex-direction: column;
+            // gap: 1rem;
+
+            &Arrows {
+                // position: relative;
+                // width: -webkit-fill-available;
+                // display: flex;
+                // justify-content: center;
+                // gap: 1rem;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+.cardOneImage {
+    height: 15rem !important;
+}
+
+
+
+
+
+.cardDisplayGrid {
+    width: -webkit-fill-available;
+    padding: 3rem .5rem;
+    gap: 5px;
+    min-width: 306px;
+    overflow: auto;
+
+    .cardOne {
+        max-width: -webkit-fill-available;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin: 2px 0;
+        float: left;
+        min-width: 100%;
+    }
+
+}
