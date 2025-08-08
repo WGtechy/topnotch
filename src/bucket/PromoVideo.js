@@ -5,7 +5,7 @@ const PromoVideo = ({src}) => {
 
     const videoRef = useRef()
       const [isPlaying, setIsPlaying] = useState(false);
-      const [mute, setMute] = useState(false)
+      const [mute, setMute] = useState(true)
       const handleVolume = ()=>setMute(prev=>!prev)
      
   return (
@@ -24,7 +24,7 @@ const PromoVideo = ({src}) => {
                        preload="auto"
                        autoPlay={true}
                        loop
-                       muted={mute ? "true" : "false"}
+                       muted={mute}
                        playsInline
                        loading="lazy"
                        className="promoVideoTemplateVideo"
