@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import {
-  IoBookmark,
   IoCart,
   IoShareSocial,
   IoVolumeHigh,
@@ -129,15 +128,6 @@ const ScreenLeftSection = ({
       action: toggleVolume,
       name: "Volume",
       display: videoMimtype.includes(product?.videos[0]?.mimetype) ? true : false,
-    },
-    {
-      icon: IoBookmark,
-      iconClassName: isSaved
-        ? "postCardIcon selectedProductIcon"
-        : "postCardIcon",
-      action: postSaveUpdateServer,
-      name: "Save",
-      display: true,
     },
     {
       icon: IoShareSocial,

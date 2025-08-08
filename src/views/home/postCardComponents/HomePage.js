@@ -7,7 +7,6 @@ import React, {
   useState,
 } from "react";
 import {
-  IoBookmark,
   IoCart,
   IoShareSocial,
   IoVolumeHigh,
@@ -147,15 +146,7 @@ const HomePage = forwardRef(
         name: "Volume",
       display: videoMimtype.includes(product?.videos[0]?.mimetype) ? true : false,
       },
-      {
-        icon: IoBookmark,
-        iconClassName: isSaved
-          ? "postCardIcon selectedProductIcon"
-          : "postCardIcon",
-        action: postSaveUpdateServer,
-        name: "Save",
-        display: true,
-      },
+    
       {
         icon: IoShareSocial,
         action: shareHandler(

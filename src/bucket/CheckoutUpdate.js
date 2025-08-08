@@ -12,7 +12,7 @@ import moment from "moment";
 import { formattedAmount } from "../utilities-config/numberFormatter";
 import { TheConfirmationMessage } from "./TheConfirmationMessage";
 import ProductStickyFooter from "./ProductStickyFooter";
-import { PiBookmark, PiPhoneLight, PiShareNetwork } from "react-icons/pi";
+import { PiPhoneLight, PiShareNetwork } from "react-icons/pi";
 import { frontURL } from "../utilities-config/urlConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { cartCrud } from "../redux/actions";
@@ -342,7 +342,6 @@ const CheckoutUpdate = ({
     title: "Confirmation required",
   };
   const icons = [
-    { name: "Save", iconName: PiBookmark, click: saveToCart, display: true },
     {
       name: "Checkout",
       iconName: IoCart,
