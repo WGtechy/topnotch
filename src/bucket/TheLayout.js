@@ -146,9 +146,9 @@ const TheLayout = ({ account, token, data, ...props }) => {
     <div className="layout">
       <TheHeader {...headerProps} />
       <TheContent {...contentProps} />
-      {["/", "/products", "/property"].includes(props.history?.location.pathname) && (
-        {/* <TheFooterMobile {...footerMobileProps} /> */}
-      )}
+      {/* {["/", "/products", "/property"].includes(props.history?.location.pathname) && (
+        <TheFooterMobile {...footerMobileProps} />
+      )} */}
     </div>
   );
 };
